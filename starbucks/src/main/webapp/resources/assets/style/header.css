@@ -1,0 +1,244 @@
+@charset "UTF-8";
+
+body{
+	margin: 0;
+    padding: 0;
+    font-size: 100%;
+    text-decoration: none;
+    vertical-align: baseline;
+    color: #666;
+    background: transparent;
+    overflow-x: hidden;
+    
+}
+ul{
+	list-style: none;
+}
+	
+a{
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	text-decoration: none;
+	vertical-align: baseline;
+	color: #666;
+	background: transparent;
+	cursor: pointer;
+}
+	
+h1{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	background: transparent;
+}
+	
+
+.header-wrap .header_inner{
+	background: #f6f5ef;
+    border-bottom: 1px solid #e5e5e5;
+    border-top: 2px solid #000;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 11;
+}
+
+.header-wrap .header_user_menu .logo{
+	position: absolute;
+	left: 0;
+}
+.header_menu{
+	position: absolute;
+	left : 0;
+	width: 100%;
+	z-index: 10;
+}
+.header-wrap .header_inner .header_user_menu{
+	margin: 0 auto;
+	position: relative;
+}
+
+.header-wrap .header_user_menu .logo #logo_img{
+	background:url("../images/starbucks_logo.png");
+	display: block;
+	height: 100%;
+	overflow: hidden;
+	text-indent: -20000px;
+	width: 100%;
+}
+.header-wrap .header_inner .header_user_menu .util_nav{
+	position: absolute;
+}
+.util_nav ul{
+	height: 20px;
+	margin: 0;
+}
+.util_nav ul li{
+	float:left;
+	text-align: center;
+}
+.util_nav ul li a{
+	font: normal 14px Avenir, Arial, georgia;
+	color: #555;
+    display: block;
+}
+.header_menu .menu_inner{
+	z-index: 7;
+	margin:  0 auto;
+}
+.header_menu .menu_inner >ul{
+	height: 100%;
+	margin: 0;
+	line-height: 55px;
+}
+.wrap_content{
+	position:relative;
+	width: 100%;
+	
+}
+
+@media screen and (min-width: 1090px){
+	.util_nav ul li a{
+		line-height: 20px;
+	}
+	.header-wrap{
+		width: 100%;
+		height: 120px;
+		position: relative;
+	}
+	.header-wrap .header_inner{
+		height: 120px;
+	    z-index: 99;
+	}
+	.header-wrap .header_inner .header_user_menu{
+		height: 120px;
+	    width: 1100px;
+	    
+	}
+	
+	.header-wrap .header_inner .header_user_menu .util_nav{
+		height: 20px;
+	    right: 93px;
+	    top: 15px;
+	    width: 464px;
+	}
+	   
+	.header-wrap .header_user_menu .logo{
+		height: 75px;
+	    top: 22px;
+	    width: 75px;
+	    z-index: 12;
+	    position: absolute;
+	    left: 0;
+	}
+	
+	
+	.util_nav ul li{
+		height: 20px;
+	}
+	.util_nav .util_nav01{
+		width: 76px;
+	}
+	.util_nav .util_nav01.My_Starbucks{
+		margin-left:1px;
+		width: 107px;
+	}
+	.util_nav .util_nav01.Customer_service{
+		margin-left:1px;
+		width: 141px;
+	}
+	.util_nav .util_nav01.Find_a_Store{
+		margin-left:1px;
+		width: 97px;
+	}
+	
+	
+	
+	.header_menu{
+		height : 66px;
+		top : 54px;
+	}
+	.header_menu .menu_inner{
+		width: 1100px;
+		height: 66px;
+	}
+	.header_menu .menu_inner >ul{
+		float: right;
+	}
+	.header_menu .menu_inner >ul .menu_nav{
+		float:left;
+		text-align: center;
+		cursor: pointer;
+		height: 100%;
+	}
+	.header_menu .menu_inner >ul .menu_nav.nav01{
+		width: 89px;
+	}
+	.header_menu .menu_inner >ul .menu_nav.nav02{
+		width: 73px;
+	}
+	.header_menu .menu_inner >ul .menu_nav.nav03{
+		width: 79px;
+	}
+	
+	.header_menu .menu_inner >ul .menu_nav.nav04{
+		width: 131px;
+	}
+	
+	.header_menu .menu_inner .menu_nav .menu_sub .sub_inner{
+		margin-left: -550px;
+	    width: 1100px;
+		left: 50%;
+	    position: relative;
+	}
+	.menu_sub_wrap{
+		display:none;
+		position: absolute;
+	    top: 66px;
+	    left: 0;
+	    background: #2C2A29;
+	    width: 100%;
+	}
+	.header_menu .menu_inner .menu_nav .menu_sub{
+		padding : 20px 0 20px 0;
+		display: inline-block;
+	    width: 100%;
+	}
+	.sub_inner ul{
+		display:inline-block;
+		float:left;
+		width: 20%;
+		padding : 0;
+		margin : 0;
+	}
+	.sub_inner ul li{
+		float:left;
+		width: 100%;
+		margin :0;
+		padding :3px 0;
+	    height: 22px;
+	    line-height: 22px;
+	}
+	.sub_inner ul .menu_sub_title{
+		margin-bottom:10px;
+	}
+	.sub_inner ul li a{
+		font-size: 14px;
+		float: left;
+		color: #999
+	}
+	.sub_inner ul li a:hover{
+		text-decoration: underline;
+	}
+	.sub_inner ul .menu_sub_title a{
+		color: #fff;
+		font-size: 16px;
+		font-weight: bold;
+}
+}
+
+
+
