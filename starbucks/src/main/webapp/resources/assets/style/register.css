@@ -3,7 +3,7 @@
 .main_wrap{
 	max-width: 600px;
 	margin: 0 auto;
-	padding-top: 20px;
+	padding-top: 20px; 
 }
 .main_wrap .register_wrap{
 	border: 1px solid #ddd;
@@ -13,7 +13,7 @@
 	max-width: 550px;
 	padding: 0 20px 0 20px;
 }
-.main_wrap .register_wrap .register_inner input{
+.main_wrap .register_wrap .register_inner >input{
 	height: 50px;
 	display:block;
 	width: 100%;
@@ -56,5 +56,23 @@
 }
 .phone_auth #auth_check{
 	width: 50%;
-	
+	display :inline-block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 15px;
+	margin: 15px 0 15px 0;
+	border: 1px solid lightgray;
+}
+.phone_auth .authbtn{
+	width: 30%;
+	border: 1px solid black;
+	height: 50px;
+	line-height:50px;
+	margin: 15px 0 15px 10px;
+	display:inline-block;
+	box-sizing: border-box;
+	background-color: #31B404; 
+	font-weight: bold;
+	color: white;
+	font-size: 17px;	
 }

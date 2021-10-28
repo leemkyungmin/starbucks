@@ -3,7 +3,7 @@
 .login_background{
 	background: url('../images/login/login_bg.jpg') center top no-repeat fixed;
 	width: 100%;
-}
+} 
 .login_background .login_wrap{
 	max-width: 570px;
 	margin : 0 auto;
