@@ -151,7 +151,46 @@
 			
 		});
 		
-				
+		$(document).on('change','#addr',function(){
+			
+			var addr = $(this).val();
+			var emailaddr = $('#email_addr');
+			if(addr !=''){
+				emailaddr.val(addr);
+				emailaddr.attr('readOnly',true);
+			} else {
+				emailaddr.val('');
+				emailaddr.attr('readOnly',false);
+			}
+			
+		});
+		
+		$('.registerbtn').on('click',function(){
+			//var idcheck =false;
+			//var pwcheck =false;
+			//var nicknamecheck = false;
+			//var emailcheck =false;
+		//	var phonecheck =false;
+			
+			if( idcheck !=true ) {
+				alert('아이디가 공백이거나 중복된 아이디입니다.');
+				$('#user_id').focus();
+			} else if( pwcheck !=true ) {
+				alert('비밀번호가 틀립니다.');
+				$('#user_pw').focus();
+			} else if( nicknamecheck !=true ) {
+				alert('닉네임을 입력해주세요');
+				$('#user_nickname').focus();
+			} else if( phonecheck !=true ) {
+				alert('휴대폰 인증해주세요');
+			} else {
+				var form =$('#rform');
+				form.submit();
+			}
+			
+			
+		})
+		
 	});
 	
 	
@@ -159,7 +198,7 @@
 </script>
 
 	<div class="main_wrap">
-		<form action="${url}/login/register" method="post">
+		<form action="${url}/login/register" method="post" id="rform">
 			<section class="register_wrap"> 
 				<div class="register_inner">
 					<label for="user_id" class="hid">아이디</label>
@@ -180,7 +219,7 @@
 					<input type="text" name="user_email" id="user_email" placeholder="이메일"> @ 
 					<input type="text" name="email_addr" id="email_addr">
 					<select id="addr">
-						<option value="직접입력">직접입력</option>
+						<option value="">직접입력</option>
 						<option value="gmail.com">지메일</option>
 						<option value="naver.com">네이버</option>
 						<option value="hanmail.net">한메일</option>
@@ -192,9 +231,11 @@
 					<p class="phone_chk hid"></p>
 					<div class="phone_auth hid">
 						<input type="text" name="auth_check" id="auth_check">
-						<input type="button" value="인증" class="authbtn" onclick="pauth_check();">	
+						<input type="button" value="인증" class="authbtn" onclick="pauth_check();" placeholder="인증번호" maxlength="6">	
 					</div>
-					 
+					 <div class="rbtn">
+					 	<input type="button" value="회원가입" class="registerbtn">
+					 </div>
 				</div>
 			</section>
 		</form>

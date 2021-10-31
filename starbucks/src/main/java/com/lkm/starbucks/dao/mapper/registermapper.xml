@@ -25,4 +25,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE UNICKNAME=#{param1}
 	</select>
 	
+	<insert id="insertuser" parameterType="com.lkm.starbucks.dto.usersdto">
+		INSERT INTO USERS (
+			UIDX,
+			UIDS,
+			UPW,
+			UNICKNAME,
+			UEMAIL,
+			UPHONE,
+			UGRADE,
+			UDATE,
+			USTARCOUNT,
+			UPOWER
+		) VALUES (
+			user_seq.nextval,
+			'${uIds}',
+			'${uPw}',
+			'${uNickName}',
+			'${uEmail}',
+			'${uPhone}',
+			'일반',
+			SYSDATE,
+			0,
+			0
+		)
+	</insert>
+	
+	
 </mapper>

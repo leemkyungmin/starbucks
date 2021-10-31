@@ -2,6 +2,7 @@ package com.lkm.starbucks.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;import org.springframework.web.servlet.mvc.ParameterizableViewController;
 
 import com.lkm.starbucks.command.command;
+import com.lkm.starbucks.command.registercommand;
 import com.lkm.starbucks.dao.logindao;
 import com.lkm.starbucks.dao.registerdao;
 import com.lkm.starbucks.dto.usersdto;
@@ -81,6 +83,27 @@ public class logincontroller {
 		
 		return "login/register"; 
 	} 
+	
+	@RequestMapping(value="login/register" ,method=RequestMethod.POST)
+	public String insertregister(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("req",req);
+		
+		registercommand rcommand = new registercommand();
+		rcommand.execute(sqlsession, model);
+		
+		int result =(Integer) model.asMap().get("result");
+		usersdto udto =(usersdto) model.asMap().get("udto");
+		
+		if(result >0) {
+			req.getSession().setAttribute("login","true");
+			req.getSession().setAttribute("uidx",udto.getUIds());
+			req.getSession().setAttribute("upower",udto.getUPower());
+		}
+		return "index";
+	} 
+	
+	
 	@RequestMapping(value="login/register/sendsms",method=RequestMethod.POST)
 	@ResponseBody
 	public String sendMessage(HttpServletRequest req) throws IOException {
@@ -98,7 +121,7 @@ public class logincontroller {
 			    String api_secret = "QCKXEVBDXYNAY3UWJQARN3J6BWX5HJYP";
 			    Message coolsms = new Message(api_key, api_secret);
 
-			   /* HashMap<String, String> params = new HashMap<String, String>();
+			    HashMap<String, String> params = new HashMap<String, String>();
 			    params.put("to", phone_num);	// 수신전화번호
 			    params.put("from", "01029949529");	// 발신전화번호. 테스트시에는 발신,수신 둘다 본인 번호로 하면 됨
 			    params.put("type", "SMS");
@@ -111,7 +134,7 @@ public class logincontroller {
 			    } catch (CoolsmsException e) {
 			      System.out.println(e.getMessage());
 			      System.out.println(e.getCode());
-			    }*/
+			    }
 			    
 			    req.getSession().setAttribute(phone_num,auth_num);
 			    System.out.println(req.getSession().getAttribute(phone_num));
@@ -135,6 +158,7 @@ public class logincontroller {
 		String sessionauth = (String) req.getSession().getAttribute(phone);
 		
 		if(sessionauth.equals(auth)) {
+			req.getSession().removeAttribute(phone);
 			return "success";
 		} else {
 			return "fail";
