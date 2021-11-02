@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.wrap{
+	max-width: 600px;
+	margin: 0 auto;
+	min-height: 600px;
+	margin-top :50px;
+}
+.find_id_wrap .find_title{
+	font-size: 30px;
+	text-align:center;
+	display:block;
+}
+
+.find_id_inner{
+	border: 1px solid #ddd;
+	box-sizing: border-box; 
+}
+.find_id_inner .find_id_img{
+	padding :0 20px 30px;
+	border-bottom: 1px solid #ddd;
+}
+.find_id_inner .find_id_img .find_img{
+	
+	width: 205px;
+	margin: 0 auto;
+	padding :30px 20px 0;
+	min-height: 182px;
+	background: url(../images/register/icon_sally.png) 100% no-repeat; 
+}
+.find_id_img p strong{
+	display:block;
+	font-size: 24px;
+	padding-bottom: 20px;
+	text-align: center;
+}
+.find_id_img p .find_id_content{
+	color: #666;
+    display: block;
+    font-size : 20px;
+    text-align:center;
+    line-height: 1.2;
+}
+.find_id_form{
+	padding: 20px 0px 20px;
+	min-height:100px;
+	margin: 0 auto;
+	text-align: center;
+}
+.hid{
+	display:none;
+}
+.find_id_form input{
+	height: 40px;
+	line-height: 40px;
+	padding : 0;
+	margin :0;
+	border:1px solid black;
+}
+.find_id_form #user_phone,#user_id{
+	width: 50%;
+	
+}
+.find_id_form #find_idbtn{
+	width: 35%;
+	background-color: #31B404;
+	cursor: pointer; 
+}

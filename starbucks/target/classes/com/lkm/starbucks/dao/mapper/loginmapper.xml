@@ -10,4 +10,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE UIDS = #{param1} and UPW =#{param2}
 	</select>
 	
+	<select id="find_id" resultType="com.lkm.starbucks.dto.usersdto">
+		SELECT *
+		FROM USERS
+		WHERE UPHONE =#{param1}
+	</select>
+	
+	<select id="find_pw" resultType="com.lkm.starbucks.dto.usersdto">
+		SELECT * 
+		FROM USERS
+		WHERE UIDS='${uIds}' and UPHONE ='${uPhone}'
+	</select>
+	
 </mapper>

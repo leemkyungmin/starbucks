@@ -166,11 +166,7 @@
 		});
 		
 		$('.registerbtn').on('click',function(){
-			//var idcheck =false;
-			//var pwcheck =false;
-			//var nicknamecheck = false;
-			//var emailcheck =false;
-		//	var phonecheck =false;
+			
 			
 			if( idcheck !=true ) {
 				alert('아이디가 공백이거나 중복된 아이디입니다.');

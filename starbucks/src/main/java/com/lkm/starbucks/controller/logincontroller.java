@@ -2,12 +2,12 @@ package com.lkm.starbucks.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONArray;
 import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,10 +15,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;import org.springframework.web.servlet.mvc.ParameterizableViewController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.JsonObject;
 import com.lkm.starbucks.command.command;
-import com.lkm.starbucks.command.registercommand;
+import com.lkm.starbucks.command.login.findidcommand;
+import com.lkm.starbucks.command.login.findpwcommand;
+import com.lkm.starbucks.command.login.registercommand;
 import com.lkm.starbucks.dao.logindao;
 import com.lkm.starbucks.dao.registerdao;
 import com.lkm.starbucks.dto.usersdto;
@@ -58,7 +61,6 @@ public class logincontroller {
 			req.getSession().setAttribute("uNickname",udto.getUNickName());
 			req.getSession().setAttribute("uPower",udto.getUPower());
 			req.getSession().setAttribute("uIds",udto.getUIds());
-			System.out.println(req.getSession().getAttribute("login"));
 			return udto.getUNickName();
 		} else {
 			return "fail";
@@ -194,4 +196,52 @@ public class logincontroller {
 		
 		return (count <1 ? "true" : "flase") ;
 	}
+	
+	//아이디 찾기 
+	@RequestMapping(value="login/find_id",method=RequestMethod.GET)
+	public String find_id() {
+		
+		return "login/findid";
+	}
+	
+	@RequestMapping(value="login/find_id",method=RequestMethod.POST)
+	@ResponseBody
+	public Boolean findid(HttpServletRequest req,@RequestParam("uphone") String uphone ,Model model) {
+		
+		model.addAttribute("uphone", uphone);
+		
+		findidcommand fc = new findidcommand();
+		fc.execute(sqlsession, model);
+		
+		return (Boolean) model.asMap().get("result");
+		
+	}
+	
+	
+	//비밀번호 찾기 
+	@RequestMapping(value="login/find_pw",method=RequestMethod.GET)
+	public String find_pw() {
+		
+		return "login/findpw";
+	}
+	@RequestMapping(value="login/find_pw",method=RequestMethod.POST)
+	@ResponseBody
+	public Boolean findpw(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("req",req);
+		
+		findpwcommand fc = new findpwcommand();
+		fc.execute(sqlsession, model);
+		
+		usersdto udto = (usersdto) model.asMap().get("udto");
+		
+		if(udto !=null) {
+			return true;
+		} else {
+			return false;
+		}
+		
+		
+	}
+	
 }

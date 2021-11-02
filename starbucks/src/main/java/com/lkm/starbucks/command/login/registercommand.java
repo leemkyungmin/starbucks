@@ -1,4 +1,4 @@
-package com.lkm.starbucks.command;
+package com.lkm.starbucks.command.login;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.ui.Model;
 
+import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.dao.registerdao;
 import com.lkm.starbucks.dto.usersdto;
 

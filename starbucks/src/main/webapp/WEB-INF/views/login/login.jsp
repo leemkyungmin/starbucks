@@ -43,8 +43,7 @@
 					type:'post',
 					data :'id='+id.val().trim()+'&pw='+pw.val().trim(),
 					success :function(result){
-						console.log('login');
-						if( result !='' || result !=null ) {
+						if( result !='fail') {
 							if($('#saveidBtn').is(':checked')){
 								localStorage.setItem('id',id.val().trim());
 							} else {
@@ -61,15 +60,8 @@
 			}
 			
 		});
-		
-		
-		
+				
 	});
-	
-	
-	
-	
-	
 	
 </script>
 	<div class="login_background">
@@ -110,10 +102,10 @@
 									<a href="${url}/login/register">회원가입</a>
 								</li>
 								<li>
-									<a href="">아이디 찾기</a>
+									<a href="${url}/login/find_id">아이디 찾기</a>
 								</li>
 								<li>
-									<a href="">비밀번호 찾기</a>
+									<a href="${url}/login/find_pw">비밀번호 찾기</a>
 								</li>
 							</ul>
 						</div>
