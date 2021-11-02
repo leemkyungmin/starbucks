@@ -29,7 +29,10 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/commom/404.jsp</location>
+	</error-page>
 	<filter> 
     <filter-name>encodingFilter</filter-name> 
     <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class> 
