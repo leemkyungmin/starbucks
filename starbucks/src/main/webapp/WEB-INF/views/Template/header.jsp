@@ -83,11 +83,7 @@
 			
 			$(this).slideUp();
 		});
-		$('.sign_in').click(function(){
-			
-			
-			
-		});
+		
 	});
 		
 </script>

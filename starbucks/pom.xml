@@ -15,12 +15,12 @@
 		<jackson-version>2.9.8</jackson-version>
 	</properties>
 	<dependencies>
-		<!-- Spring --> 
+		<!-- Spring -->  
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
+			<exclusions> 
 				<!-- Exclude Commons Logging in favor of SLF4j -->
 				<exclusion>
 					<groupId>commons-logging</groupId>
