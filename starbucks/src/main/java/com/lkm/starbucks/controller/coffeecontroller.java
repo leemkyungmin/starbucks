@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lkm.starbucks.command.command;
+import com.lkm.starbucks.command.coffee.*;
 
 @Controller
 public class coffeecontroller {
@@ -26,7 +28,23 @@ public class coffeecontroller {
 		
 		model.addAttribute("Category",Category);
 		
+		command = new coffeecommand();
+		command.execute(sqlsession, model);
+		
 		return "product/coffee_list";
+	}
+	
+	@RequestMapping(value="coffee/coffee_list_ajax",method=RequestMethod.GET)
+
+	public String coffeelist_ajax(HttpServletRequest req,Model model) {
+		String Category = req.getParameter("Category") ==null ? "1" : req.getParameter("Category");
+		System.out.println("Category:"+Category);
+		model.addAttribute("Category",Category);
+		
+		command = new coffeecommand();
+		command.execute(sqlsession, model);
+		
+		return "product/coffee_list_ajax";
 	}
 	
 	

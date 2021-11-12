@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lkm.starbucks.dao.coffeedao">
+	<select id="getCoffeeList" resultType="com.lkm.starbucks.dto.coffee_kindsdto">
+		SELECT ck.*,ckt.CKTNAME
+		FROM COFFEE_KINDS ck, COFFEE_KINDS_TYPE ckt
+		WHERE ck.CKCATEGORY =#{param1} and ck.CKTIDX = ckt.CKTIDX
+		ORDER BY ck.CKCATEGORY,ck.CKTIDX ASC
+	</select>
+	
+	<select id="getCoffeeType" resultType="com.lkm.starbucks.dto.coffee_kinds_typedto">
+		SELECT ckt.CKTIDX,ckt.CKTNAME 
+		FROM COFFEE_KINDS_TYPE ckt, COFFEE_KINDS ck
+		WHERE ck.CKCATEGORY = #{param1} AND ckt.CKTIDX = ck.CKTIDX
+		ORDER BY ckt.CKTIDX
+	</select>
+	
+	
+</mapper>
