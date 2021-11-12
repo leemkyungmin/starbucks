@@ -11,7 +11,7 @@ import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.dao.coffeedao;
 import com.lkm.starbucks.dto.*;
 
-public class coffeecommand implements command {
+public class coffee_listcommand implements command {
 
 	@Override
 	public void execute(SqlSession sqlsession, Model model) {
@@ -23,7 +23,7 @@ public class coffeecommand implements command {
 		
 		ArrayList<coffee_kindsdto> cklist = cdao.getCoffeeList(Category);
 		ArrayList<coffee_kinds_typedto> cktlist = cdao.getCoffeeType(Category);
-		
+		System.out.println("size:  "+cktlist.size());
 		model.addAttribute("cktlist",cktlist);
 		model.addAttribute("cklist", cklist);
 		model.addAttribute("Category", Category);

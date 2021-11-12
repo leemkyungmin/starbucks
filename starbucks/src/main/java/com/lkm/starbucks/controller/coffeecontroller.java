@@ -28,7 +28,7 @@ public class coffeecontroller {
 		
 		model.addAttribute("Category",Category);
 		
-		command = new coffeecommand();
+		command = new coffee_listcommand();
 		command.execute(sqlsession, model);
 		
 		return "product/coffee_list";
@@ -38,13 +38,22 @@ public class coffeecontroller {
 
 	public String coffeelist_ajax(HttpServletRequest req,Model model) {
 		String Category = req.getParameter("Category") ==null ? "1" : req.getParameter("Category");
-		System.out.println("Category:"+Category);
 		model.addAttribute("Category",Category);
 		
-		command = new coffeecommand();
+		command = new coffee_listcommand();
 		command.execute(sqlsession, model);
 		
 		return "product/coffee_list_ajax";
+	}
+	
+	@RequestMapping(value="coffee/product_view",method=RequestMethod.POST)
+	public String coffee_product_view(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("req",req);
+		command = new coffee_product_viewcommand();
+		command.execute(sqlsession, model);
+		
+		return "product/coffee_product_view";
 	}
 	
 	

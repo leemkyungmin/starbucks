@@ -9,11 +9,11 @@ import lombok.Setter;
 public class coffee_kinds_typedto {
 
 	public int cktIdx;
-	public String cktName,cktTitle,cktInfo,cktImg;
-	
+	public String cktName,cktTitle,cktInfo;
+	public byte[] cktImg;
 	public coffee_kinds_typedto() {}
 
-	public coffee_kinds_typedto(int cktIdx, String cktName, String cktTitle, String cktInfo, String cktImg) {
+	public coffee_kinds_typedto(int cktIdx, String cktName, String cktTitle, String cktInfo, byte[] cktImg) {
 		super();
 		this.cktIdx = cktIdx;
 		this.cktName = cktName;

@@ -15,7 +15,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT ckt.CKTIDX,ckt.CKTNAME 
 		FROM COFFEE_KINDS_TYPE ckt, COFFEE_KINDS ck
 		WHERE ck.CKCATEGORY = #{param1} AND ckt.CKTIDX = ck.CKTIDX
+		GROUP BY ckt.CKTNAME,ckt.CKTIDX
 		ORDER BY ckt.CKTIDX
+	</select>
+	
+	<select id="coffee_product_info" resultType="com.lkm.starbucks.dto.coffee_kindsdto">
+		SELECT *
+		FROM COFFEE_KINDS 
+		WHERE CKIDX=#{param1}
+	</select>
+	
+	<select id="coffee_product_type_info" parameterType="String" resultType="com.lkm.starbucks.dto.coffee_kinds_typedto">
+		SELECT ckt.*
+		FROM COFFEE_KINDS ck , COFFEE_KINDS_TYPE ckt
+		WHERE ck.CKIDX=#{param1} AND ck.CKTIDX = ckt.CKTIDX
 	</select>
 	
 	

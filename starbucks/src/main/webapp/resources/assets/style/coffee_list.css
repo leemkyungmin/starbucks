@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+.wrap{
+	position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .title_inner{
 	width : 70%;
 	height: 91px;
@@ -18,6 +24,8 @@
 .wrap .coffee_content{
 	width: 70%;
 	margin: 0 auto;
+	min-height: 2000px;
+	height: 100%;
 }
 .wrap .coffee_content .coffee_type_controll{
 	padding: 30px 30px 0 30px;
@@ -63,4 +71,86 @@
 }
 .coffee_inner {
 	margin-top  :100px;
+}
+.product_list> dl> dt.coffee_type_icon1{
+	background:#f4f4f2 url('../images/coffee/coffee_type_icon1.png') 20px center no-repeat;
+
+}
+.product_list> dl> dt.coffee_type_icon2{
+	background :#f4f4f2  url('../images/coffee/coffee_type_icon2.png') 20px center no-repeat;
+}
+.product_list> dl> dt.coffee_type_icon3{
+	background :#f4f4f2  url('../images/coffee/coffee_type_icon3.png') 20px center no-repeat;
+}
+.product_list> dl> dt.coffee_type_icon4{
+	background :#f4f4f2  url('../images/coffee/coffee_type_icon4.png') 20px center no-repeat;
+}
+.product_list>dl>dt{
+	padding: 20px;    
+	background: #f4f4f2;
+    margin-bottom: 20px;
+}
+div.product_list > dl > dt > a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    margin-left: 50px;
+}
+.product_list > dl > dd {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    margin-bottom: 40px;
+    overflow: hidden;
+    height: auto;    
+}
+div.product_list > dl > dd > ul {
+    width: 1120px;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+div.product_list > dl > dd > ul > li {
+    width: 260px;
+    float: left;
+    margin: 10px;
+    position: relative;
+}
+div.product_list > dl > dd > ul li dt {
+    width: 260px;
+    height: 245px;
+    position: relative;
+    overflow: hidden;
+}
+.coffee_list_wrap{
+	position: relative;
+	padding-top: 80px;
+	display: block;
+}
+div.product_list > dl > dd > ul li dl {
+    width: 260px;
+}
+div.product_list > dl > dd > ul li dd {
+	margin:0;	
+    font-size: 14px;
+    color: #444;
+    height: 54px;
+    line-height: 54px;
+    text-align: center;
+    background: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+img{
+	vertical-align: top;
+    max-width: 100%;
+}
+div.product_list > dl > dd > ul li dt > a > img {
+    transition: transform 1s;
+    -webkit-transition: -webkit-transform 1s;
+}
+
+div.product_list > dl > dd > ul li dt > a > img:hover {
+    transform: scale(1.2);
 }

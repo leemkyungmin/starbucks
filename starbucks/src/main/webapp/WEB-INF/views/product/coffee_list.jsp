@@ -30,6 +30,30 @@
 		}
 		
 	</script>
+	
+	<script>
+		$().ready(function(){
+			$('.coffeeData a>img').on('click',function(){
+				var ckidx =$(this).parent().data('target');
+
+				var form =document.createElement('form');
+				form.setAttribute('method','post');
+				form.setAttribute('action','${url}/coffee/product_view');
+				document.charset='utf-8';
+				
+				var data = document.createElement('input');
+				data.setAttribute('type','hidden');
+				data.setAttribute('name','ckidx');
+				data.setAttribute('value',ckidx);
+				form.appendChild(data);
+				
+				document.body.appendChild(form);
+				
+				form.submit();
+				
+			});
+		});
+	</script>
 
 	<div class="wrap">
 		<div class="title_wrap">
@@ -61,12 +85,19 @@
 				<c:forEach var="cktlist" items="${cktlist}" varStatus="cktcount">
 					<c:if test="${cktcount.count eq 1 }">
 						<div class="coffee_list_wrap coffee_list_wrap${Category}">
+							<ul class="coffee_view_pannel">
+							
+								<li class="coffee_view_tab1">
+								
 							<div class="product_list">
 								<dl>
+								
 					</c:if>
-									<dt>${cktlist.getCktName()}</dt>
-									<dd>
-										<ul>
+								<dt class="coffee_type_icon${cktlist.getCktIdx()}">
+										<a href="javascript:void(0);">${cktlist.getCktName()}</a>
+								</dt>
+								<dd>
+									<ul>
 										
 										<c:forEach var="cklist" items="${cklist}">
 											<c:if test="${cktlist.getCktIdx() eq cklist.getCktIdx() }"  var="a">
@@ -86,7 +117,10 @@
 										</ul> 
 									</dd>
 				</c:forEach>
+									
 								</dl>
+								</li>
+							</ul>
 							</div>
 						</div>
 						
