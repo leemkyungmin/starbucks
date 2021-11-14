@@ -11,6 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://www.elevateweb.co.uk/wp-content/themes/radial/jquery.elevatezoom.min.js" type="text/javascript"></script>
 <link rel="stylesheet" href="${url}/resources/assets/style/header.css">
 <script src="${url}/resources/assets/js/header.js"></script>
 <title>StarBucks</title>

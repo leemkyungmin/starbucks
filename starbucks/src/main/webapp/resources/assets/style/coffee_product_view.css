@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+.wrap {
+	width: 100%;
+}
+.coffee_content{
+	width: 100%;
+}
+.sub_title_inner{
+	width: 70%;
+	height: 91px;
+    margin: 0 auto;
+    position: relative;
+}
+.sub_title_inner h2{
+	padding-top: 30px;
+    position: relative;
+}
+.coffee_product_inner .coffee_info .coffee_info_content{
+	width: 70%;
+	margin: 0 auto;
+}
+.coffee_product_inner .coffee_info .coffee_info_content .product_wrap01{
+	width: 100%;
+	padding-bottom: 40px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid #ddd;
+	min-height: 450px;
+}
+.coffee_product_inner .coffee_info .coffee_info_content .product_wrap01 .product_picture{
+	width: 30%;
+	float:left;
+}
+.coffee_product_inner .coffee_info .coffee_info_content .product_wrap01 .product_Detail{
+	width: 60%;
+	float:right;
+	position: relative;
+}
+.product_wrap01 .product_picture .product_main_img{
+	height: 470px;
+    margin-bottom: 8px;
+    position: relative;
+    width: 100%;
+}
+img {
+    vertical-align: top;
+    max-width: 100%;
+}
+p.more_btn {
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+}
+.product_Detail_inner{
+	position: relative;
+}
+.product_Detail_inner header{
+	border-bottom: 2px solid #333;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+}
+.product_Detail_inner header h4{
+	color: #222;
+    font-size: 24px;
+    font-weight: bold;
+    width: 68%;
+}
+.product_Detail_inner .myDrink{
+	position: absolute;
+	top: 7px;
+	right: 0;
+}
+.product_Detail_inner .myDrink a{
+	display: block;
+    width: 138px;
+    height: 28px;
+    line-height: 28px;
+    background: #006633;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+}
+.product_Detail_inner .tt01{
+	font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    padding-bottom: 55px;
+}
+.product_Detail_inner .coffee_type_icon{
+	background: #f4f4f2;
+    border-radius: 3px;
+    color: #666;
+    font-size: 14px;
+    height: 52px;
+    line-height: 52px;
+    margin-bottom: 40px;
+    width: 95%;
+    padding-left: 5%;
+}
+.product_Detail_inner .coffee_type_icon img{
+	margin: 5px 10px 0 0;
+}
+.product_Detail_inner .coffee_type_icon strong{
+	color: #222;
+    font-size: 16px;
+    font-weight: normal;
+    height: 16px;
+    line-height: 16px;
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right:1px solid #ddd;
+}
+.product_Detail_inner .coffee_type_icon .info{
+	color: #666;
+	font-size: 15px;
+}
+.product_view_wrap2 {
+    padding-bottom: 40px;
+    min-height: 500px;
+}
+.product_view_wrap2 .productInvestigate_left {
+    float: left;
+    width: 60%;
+    padding-right: 40px;
+}
+.product_view_wrap2 .productInvestigate_right {
+    float: right;
+    width: 30%;
+    background: #f4f4f2;
+    border-radius: 3px;
+    padding: 0 20px 0 20px;
+}
+div.product_view_wrap2 div.productInvestigate_left p.text {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+div.product_view_wrap2 div.productInvestigate_left ul {
+    margin-left: -25px;
+}
+div.product_view_wrap2 div.productInvestigate_left ul li {
+    float: left;
+    width: 320px;
+    margin-left: 25px;
+}
+div.product_view_wrap2 div.productInvestigate_left ul li p {
+    float: left;
+    width: 320px;
+    margin-bottom: 20px;
+}
+div.product_view_wrap2 div.productInvestigate_left ul li dl dt {
+    font-size: 14px;
+    color: #444;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+div.product_view_wrap2 div.productInvestigate_left ul li dl dd {
+    font-size: 12px;
+    color: #666;
+    line-height: 18px;
+}
+div.product_view_wrap2 div.productInvestigate_right dl dt {
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-top: 30px;
+}
+div.product_view_wrap2 div.productInvestigate_right dl dd {
+    border-bottom: 1px solid #ddd;
+    color: #666;
+    font-size: 14px;
+    line-height: 22px;
+    padding-bottom: 28px;
+}
+div.product_view_wrap2 div.productInvestigate_right dl dd.last {
+    border-bottom: 0;
+}
+div.product_view_wrap2 div.productInvestigate_right dl dd p {
+    padding-bottom: 30px;
+}
+div.zoomWindowContainer div {
+    border: 1px solid #ddd !important;
+}
+.dg_story{
+	margin:0;
+	padding:0;
+}

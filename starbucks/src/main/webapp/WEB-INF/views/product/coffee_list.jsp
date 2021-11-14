@@ -70,13 +70,14 @@
 				<div class="product_toggle">
 					<dl class="product_kinds">
 						<dt class="dt1">
-							<a href="javascript:void(0)" data-target="1" onclick="coffee_list_ajax(this);" class="coffee_item selected">스타벅스 원두</a>
+							<a href="javascript:void(0)" data-target="1" onclick="coffee_list_ajax(this);" class="coffee_item ${Category eq 1 ? 'selected' :'' }">스타벅스 원두</a>
+							
 						</dt>
 						<dt class="dt2">
-							<a href="javascript:void(0)" data-target="2" onclick="coffee_list_ajax(this);" class="coffee_item">스타벅스 비아</a>
+							<a href="javascript:void(0)" data-target="2" onclick="coffee_list_ajax(this);" class="coffee_item ${Category eq 2 ? 'selected' :'' }">스타벅스 비아</a>
 						</dt>
 						<dt class="dt3">
-							<a href="javascript:void(0)" data-target="3" onclick="coffee_list_ajax(this);" class="coffee_item">스타벅스앳홈 by 캡슐</a>
+							<a href="javascript:void(0)" data-target="3" onclick="coffee_list_ajax(this);" class="coffee_item ${Category eq 3 ? 'selected' :'' }">스타벅스앳홈 by 캡슐</a>
 						</dt>
 					</dl>
 				</div>
