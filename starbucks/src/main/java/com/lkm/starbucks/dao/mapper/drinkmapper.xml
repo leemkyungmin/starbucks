@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lkm.starbucks.dao.drinkdao">
+	
+	<select id="all_drink_list" resultType="com.lkm.starbucks.dto.drinkdto">
+		SELECT *
+		FROM DRINK_LIST
+		ORDER BY FTIDX ASC
+	</select>	
+	
+	<select id="getmenutypelist" resultType="com.lkm.starbucks.dto.menu_typedto">
+		SELECT * 
+		FROM FOOD_TYPE_LIST
+		WHERE FTTYPE=#{param1}
+	</select>
+	
+	<select id="getdrink" resultType="com.lkm.starbucks.dto.drinkdto">
+		SELECT *
+		FROM DRINK_LIST
+		WHERE DIDX= #{param1}
+	</select>
+	
+	<select id="getdrinktype" resultType="String">
+		SELECT ft.ftname 
+		FROM DRINK_LIST dl, FOOD_TYPE_LIST ft
+		WHERE dl.didx =#{param1} and dl.ftidx = ft.ftidx
+	</select>
+	
+	
+</mapper>

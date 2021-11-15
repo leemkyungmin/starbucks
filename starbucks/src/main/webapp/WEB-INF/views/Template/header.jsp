@@ -171,10 +171,10 @@
 												<a href="${url}/menu/drink_list?type=expresso">에스프레소</a>
 											</li>
 											<li>
-												<a href="${url}/menu/drink_list?frappucino">프라푸치노</a>
+												<a href="${url}/menu/drink_list?type=frappucino">프라푸치노</a>
 											</li>
 											<li>
-												<a href="${url}/menu/drink_list?">블랜디드</a>
+												<a href="${url}/menu/drink_list?type=blended">블랜디드</a>
 											</li>
 											<li>
 												<a href="${url}/menu/drink_list?type=fizzo">스타벅스 피치오 </a>

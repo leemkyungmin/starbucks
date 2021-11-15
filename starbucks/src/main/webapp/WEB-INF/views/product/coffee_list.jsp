@@ -71,7 +71,6 @@
 					<dl class="product_kinds">
 						<dt class="dt1">
 							<a href="javascript:void(0)" data-target="1" onclick="coffee_list_ajax(this);" class="coffee_item ${Category eq 1 ? 'selected' :'' }">스타벅스 원두</a>
-							
 						</dt>
 						<dt class="dt2">
 							<a href="javascript:void(0)" data-target="2" onclick="coffee_list_ajax(this);" class="coffee_item ${Category eq 2 ? 'selected' :'' }">스타벅스 비아</a>

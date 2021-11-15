@@ -154,3 +154,86 @@ div.product_list > dl > dd > ul li dt > a > img {
 div.product_list > dl > dd > ul li dt > a > img:hover {
     transform: scale(1.2);
 }
+.sumaryicon{
+	display: block;
+    float: left;
+    width: 45px;
+    height: 18px;
+    margin-left: 15px;
+}
+.sumaryicon img{
+	position: relative;
+    top: -6px;
+}
+.sumary {
+    display: block;
+    float: left;
+    line-height: 18px;
+    margin-left: 5px;
+    font-size: 13px;
+    color: #444444;
+    letter-spacing: -1px;
+}
+.product_list dl .dti a{
+	margin-left: 0;
+	float:left;
+	
+}
+.product_list dl .dti {
+	height: 20px;
+	line-height: 20px;
+}
+.product_toggle .product_kinds .dt_mt{
+	margin-right: 100%;
+}
+.product_kinds dd{
+	margin-top: 55px;
+	margin-left: 0;
+	width: 100%;
+    min-height: 50px;
+}
+.product_kinds dd form ul{
+	margin: 0;
+	padding: 0;
+	width: 70%;
+}
+.product_kinds dd form ul li{
+	font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    float: left;
+    margin-right: 30px;
+    font-weight: normal;
+    margin-bottom: 10px;
+	
+}
+form input[type="checkbox"]:checked+label{
+	    background: #fff url(//image.istarbucks.co.kr/common/img/util/ck_icon_on.jpg) no-repeat 0 50%;
+    background-size: 12px;
+}
+form input[type=checkbox]:not(old) + label{
+	position: relative;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    padding-left: 20px;
+    background: #fff url(//image.istarbucks.co.kr/common/img/util/ck_icon.jpg) 0 50% no-repeat;
+    font-size: 14px;
+    color: #3f4141;
+    cursor: pointer;
+    vertical-align: top;
+    background-size: 12px;
+    cursor: pointer;
+    z-index: 4;
+}
+form input[type=checkbox]:not(old) {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 0 none;
+    left: -999999px;
+    top: 1px;
+    background: #fff;
+    cursor: pointer;
+}
