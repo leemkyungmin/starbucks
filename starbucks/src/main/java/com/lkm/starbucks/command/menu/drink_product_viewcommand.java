@@ -24,11 +24,11 @@ public class drink_product_viewcommand implements command {
 		drinkdao drinkdao = sqlsession.getMapper(drinkdao.class);
 		
 		String didx = req.getParameter("didx");
-		System.out.println("didx ="+didx);
+		
 		
 		drinkdto drinkdto =  drinkdao.getdrink(didx);
 		
-		System.out.println("ddd : "+drinkdto.getDName());
+		
 		model.addAttribute("drink", drinkdto);
 		model.addAttribute("title", drinkdao.getdrinktype(didx));
 

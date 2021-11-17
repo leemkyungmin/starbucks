@@ -20,7 +20,7 @@
 	$().ready(function(){
 		//로그인 상태 확인 
 		if(${sessionScope.login !=null} ){
-			$('.sign_out').css({'display' :'block'});
+			$('.sign_out').css({'display' :'block'});  
 			$('.sign_in').css({'display' :'none'});	
 		} else {
 			$('.sign_out').css({'display' :'none'});
@@ -192,7 +192,29 @@
 										
 										<ul>
 											<li class="menu_sub_title">
-												<a href="${url}/coffee/coffeeFind">나와 어울리는 커피</a>
+												<a href="${url}/menu/food_list">푸드</a>
+											</li>
+											
+											<li>
+												<a href="${url}/menu/food_list?type=bakery">브레드</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=cake">케이크</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=sandwich">샌드위치 & 샐러드</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=warm_food">따뜻한 푸드</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=fruit">과일 & 요거트</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=snack">스낵 & 미니 디저트</a>
+											</li>
+											<li>
+												<a href="${url}/menu/food_list?type=icecream">아이스크림</a>
 											</li>
 										</ul>
 									</div> 
