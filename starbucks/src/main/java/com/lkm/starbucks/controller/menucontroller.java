@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.command.menu.drink_product_viewcommand;
 import com.lkm.starbucks.command.menu.drinklistcommand;
+import com.lkm.starbucks.command.menu.food_listcommand;
+import com.lkm.starbucks.command.menu.food_product_viewcommand;
 
 @Controller
 public class menucontroller {
@@ -43,9 +45,30 @@ public class menucontroller {
 		return "product/drink_product_view";
 	}
 	
-	
-	
-	
 	//음식
+	
+	@RequestMapping(value="menu/food_list",method=RequestMethod.GET)
+	public String foodlist(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("req", req);
+		
+		command = new food_listcommand();
+		command.execute(sqlsession, model);
+		
+		
+		return "product/food_list";
+	}
+	
+	@RequestMapping( value="menu/food/product_view", method=RequestMethod.POST)
+	public String food_product_list(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("fidx", req.getParameter("fidx"));
+		
+		command = new food_product_viewcommand();
+		command.execute(sqlsession, model);
+		
+		
+		return "product/food_product_view";
+	}
 	
 }

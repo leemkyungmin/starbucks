@@ -30,8 +30,8 @@
 							<div class="product_main_img">
 								<p>
 									<a href="javascript:void(0);"> 
-										<img class="zoomImg" alt="${drink.getDName()}" src="${url}/resources/assets/images/drink_img_test/${drink.getDLargeimg()}"
-										data-zoom-image="${url}/resources/assets/images/drink_img_test/${drink.getDLargeimg()}">
+										<img class="zoomImg" alt="${fdto.getFName()}" src="${url}/resources/assets/images/food_img_test/${fdto.getFLargeimg()}"
+										data-zoom-image="${url}/resources/assets/images/food_img_test/${fdto.getFLargeimg()}">
 									</a>
 								</p>
 								<p class="more_btn">
@@ -45,35 +45,35 @@
 						<div class="product_Detail">
 							<div class="product_Detail_inner">
 								<header>
-									<h4>${drink.getDName()}</h4>
+									<h4>${fdto.getFName()}</h4>
 								</header>
 								<div class="myDrink">
 									<a href="javascript:void(0)">나만의 상품으로 등록</a>
 								</div>
-								<p class="tt01">${drink.getDInfo()}</p>
+								<p class="tt01">${fdto.getFInfo()}</p>
 								<div class="product_nutrition_info">
 									<div class="product_info_title">
 										<p class="title">제품 영양 정보</p>
-										<div class="proudct_size">${drink.getDSize()}</div>
+										<div class="proudct_size">${fdto.getFSize()}(g)</div>
 									</div>
 									<div class="nutrition_content">
 										<ul>
 											<li class="kcal">
 												<dl> 
 											 		<dt>1회 제공량 (kcal)</dt>
-													<dd>${drink.getDKcal() }</dd>
+													<dd>${fdto.getFKcal() }</dd>
 												</dl>
 											</li>
 											<li class="saturate">
 												<dl>
 													<dt>포화지방 (g)</dt>
-													<dd>${drink.getDSaturate() }</dd>
+													<dd>${fdto.getFSaturate() }</dd>
 												</dl>
 											</li>
 											<li class="protein">
 												<dl>
 													<dt>단백질 (g)</dt>
-													<dd>${drink.getDProtein() }</dd>
+													<dd>${fdto.getFProtein() }</dd>
 												</dl>
 											</li>
 										</ul>
@@ -82,40 +82,33 @@
 											<li class="salt">
 												<dl>
 													<dt>나트륨 (mg)</dt>
-													<dd>${drink.getDSalt() }</dd>
+													<dd>${fdto.getFSalt() }</dd>
 												</dl>
 											</li>
 											<li class="sugar">
 												<dl>
 													<dt>당류 (g)</dt>
-													<dd>${drink.getDSugar() }</dd>
+													<dd>${fdto.getFSugar() }</dd>
 												</dl>
 											</li>
-											<li class="caffeine">
+											<li>
 												<dl>
-													<dt>카페인 (mg)</dt>
-													<dd>${drink.getDCaffeine() }</dd>
+													<dt></dt>
+													<dd></dd>
 												</dl>
 											</li>
 										</ul>
 									</div>
 								</div>
-								<c:if test="${drink.getDAllergy() ne null }">
+								<c:if test="${fdto.getFNotice() ne null }">
 									<div class="allergy_notice">
 										<div class="allergy_inner">
-											<p>알레르기 유발요인:${drink.getDAllergy() }</p>
+											<p>알레르기 유발요인:${fdto.getFNotice() }</p>
 										</div>
 									</div>
 								
 								</c:if>
-								<!-- <p class="coffee_type_icon">
-									<img alt="${ckt.getCktName()}"
-										src="${url}/resources/assets/images/coffee/${ckt.getCktImg()}">
-									<strong>${ckt.getCktName()}</strong> 
-									<span class="info">${ckt.getCktInfo() }</span>
-								</p>
-								 -->
-								 
+									
 								 
 								 
 							</div>

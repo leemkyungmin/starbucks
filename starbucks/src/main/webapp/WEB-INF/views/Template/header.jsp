@@ -227,7 +227,7 @@
 								<div class="menu_sub">
 									<div class="sub_inner">
 										<ul>
-											<li class="menu_title">
+											<li class="menu_sub_title">
 												<a href="${url}/store/storeMap">매장 찾기</a>
 											</li>
 											<li>

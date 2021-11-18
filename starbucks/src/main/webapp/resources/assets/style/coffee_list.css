@@ -70,7 +70,7 @@
     color: #fff;
 }
 .coffee_inner {
-	margin-top  :100px;
+	margin-top  :60px;
 }
 .product_list> dl> dt.coffee_type_icon1{
 	background:#f4f4f2 url('../images/coffee/coffee_type_icon1.png') 20px center no-repeat;
@@ -124,7 +124,6 @@ div.product_list > dl > dd > ul li dt {
 }
 .coffee_list_wrap{
 	position: relative;
-	padding-top: 80px;
 	display: block;
 }
 div.product_list > dl > dd > ul li dl {
@@ -236,4 +235,8 @@ form input[type=checkbox]:not(old) {
     top: 1px;
     background: #fff;
     cursor: pointer;
+}
+ul{
+	padding:0;
+	margin: 0;
 }

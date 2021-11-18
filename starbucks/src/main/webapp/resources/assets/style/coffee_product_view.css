@@ -213,6 +213,7 @@ div.zoomWindowContainer div {
 .nutrition_content{
 	position: relative;
 	width: 100%;
+	height: 128px;
 }
 .nutrition_content ul{
 	width: 50%;
@@ -236,4 +237,15 @@ div.zoomWindowContainer div {
 	display:inline-block;
 	float:right;
 	padding-right: 15px;	
+}
+.allergy_notice{
+	
+	padding-top:10px;
+	padding-bottom:20px;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+.allergy_inner{
+	background-color: #ddd;
 }
