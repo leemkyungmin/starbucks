@@ -33,7 +33,10 @@ h1{
 	font-size: 100%;
 	background: transparent;
 }
-	
+
+.header-wrap{
+	z-index: 200;
+}	
 
 .header-wrap .header_inner{
 	background: #f6f5ef;
