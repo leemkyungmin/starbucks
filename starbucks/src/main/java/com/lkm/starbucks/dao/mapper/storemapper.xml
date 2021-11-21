@@ -8,7 +8,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getbranch_info" resultType="com.lkm.starbucks.dto.branch_infodto">
 		SELECT *
 		FROM BRANCH_INFO
-		WHERE BLOCATION LIKE #{param1}||'%'
+		WHERE BNAME LIKE '%'|| #{param1} ||'%' OR BLOCATION LIKE '%'|| #{param1} ||'%'
 	</select>
 	
 </mapper>

@@ -25,7 +25,7 @@ public class storemap_ajaxcommand implements command {
 		storedao sdao = sqlsession.getMapper(storedao.class);
 		
 		ArrayList<branch_infodto> bilist = sdao.getbranch_info(location);
-		
+		System.out.println(bilist.size());
 		model.addAttribute("bilist",bilist);
 		
 
