@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lkm.starbucks.dao.eventdao">
+	
+	<select id="getProgressEvent" resultType="com.lkm.starbucks.dto.eventdto">
+		SELECT *
+		FROM EVENT
+		<![CDATA[WHERE ESTARTDAY <= SYSDATE AND EENDDAY >=SYSDATE]]>
+		ORDER BY ETYPE
+	</select>
+	<select id="getEndEvent" resultType="com.lkm.starbucks.dto.eventdto">
+		SELECT *
+		FROM EVENT
+		<![CDATA[WHERE  EENDDAY <=SYSDATE]]>
+		ORDER BY ETYPE
+	</select>
+	
+	
+</mapper>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="f"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <c:set var="url" value="${pageContext.request.contextPath }"/>
 <!DOCTYPE html>
 <html>
@@ -253,6 +253,15 @@
 										<ul>
 											<li class="menu_sub_title">
 												<a href="${url}/event/eventList">이벤트</a>
+											</li>
+											<li>
+												<a href="${url}/event/eventList">전체</a>
+											</li>
+											<li>
+												<a href="${url}/event/eventList?type=CARD">카드 이벤트</a>
+											</li>
+											<li>
+												<a href="${url}/event/eventList?type=REWARD">리워드 이벤트</a>
 											</li>
 											
 										</ul>

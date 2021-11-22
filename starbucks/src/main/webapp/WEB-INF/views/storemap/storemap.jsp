@@ -47,12 +47,7 @@
 							</div>
 						</article>
 					</article>
-					<header class="find_road_header">
-						<h2 class="btn_find_road">
-							<a href="javascript:void(0);">길찾기</a>
-						</h2>
-					</header>
-					<article></article>
+					
 				</section>
 			</div>
 		</form>
