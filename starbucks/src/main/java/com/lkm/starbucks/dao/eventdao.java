@@ -12,6 +12,6 @@ public interface eventdao {
 	//종료된 이벤트
 	public ArrayList<eventdto> getEndEvent();
 	
-	
+	public eventdto geteventinfo(String edix);
 	
 }

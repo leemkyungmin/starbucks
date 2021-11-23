@@ -18,5 +18,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		ORDER BY ETYPE
 	</select>
 	
+	<select id="geteventinfo" resultType="com.lkm.starbucks.dto.eventdto">
+		SELECT *
+		FROM EVENT
+		WHERE EIDX=#{param1} 
+	</select>
 	
 </mapper>

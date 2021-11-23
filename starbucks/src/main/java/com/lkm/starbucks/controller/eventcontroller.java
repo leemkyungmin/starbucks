@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.lkm.starbucks.command.command;
+import com.lkm.starbucks.command.event.event_viewcommand;
 import com.lkm.starbucks.command.event.eventlistcommand;
 
 @Controller
@@ -27,5 +28,17 @@ public class eventcontroller  {
 		command.execute(sqlsession, model);
 		
 		return "event/eventPage";
+	}
+	
+	@RequestMapping(value="event/event_view",method=RequestMethod.POST)
+	public String eventview(HttpServletRequest req,Model model) {
+		
+		model.addAttribute("req", req);
+		
+		command= new event_viewcommand();
+		command.execute(sqlsession, model);
+		
+		return "event/event_view"; 
+				
 	}
 }

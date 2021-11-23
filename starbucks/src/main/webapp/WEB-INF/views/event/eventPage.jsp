@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file="../Template/header.jsp" %>
-<link rel="stylesheet" href="${url}/resources/assets/style/eventpage.css">
+	pageEncoding="UTF-8"%>
+<%@ include file="../Template/header.jsp"%>
+<link rel="stylesheet"
+	href="${url}/resources/assets/style/eventpage.css">
 
 <script>
 	$().ready(function(){
@@ -32,6 +33,28 @@
 			$(this).parent().next().css({'display':'block'});
 			
 		});
+		
+		$('.event_list a img').on('click',function(){
+			var eidx =$(this).parent().data('eidx');
+
+			var f = document.createElement('form');
+			f.setAttribute('method','post');
+			f.setAttribute('action','${url}/event/event_view');
+			document.charset='utf-8';
+			
+			var data = document.createElement('input');
+			data.setAttribute('type','hidden');
+			data.setAttribute('name','eidx');
+			data.setAttribute('value',eidx);
+			f.appendChild(data);
+			
+			document.body.appendChild(f);
+			
+			
+			f.submit();
+			
+		});
+		
 	});
 </script>
 
@@ -40,9 +63,7 @@
 	<div class="event_wrap">
 		<div class="title_wrap">
 			<div class="title_inner">
-				<h2>
-					이벤트
-				</h2>
+				<h2>이벤트</h2>
 			</div>
 		</div>
 		<div class="event_content">
@@ -57,19 +78,26 @@
 							<dt>진행중 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="pevent" items="${pEvent}" >
-										<fmt:parseDate value="${pevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-										<fmt:parseDate value="${pevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>			
+									<c:forEach var="pevent" items="${pEvent}">
+										<fmt:parseDate value="${pevent.getEStartday()}" var="startday"
+											pattern="yyyy-MM-dd" />
+										<fmt:parseDate value="${pevent.getEEndday()}" var="endday"
+											pattern="yyyy-MM-dd" />
 										<li>
 											<dl>
 												<dt>
-													<a href="javascript:void(0)" data-eidx =${pevent.getEIdx() }>
-														<img  src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
+													<a href="javascript:void(0)" data-eidx=${pevent.getEIdx() }>
+														<img
+														src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
 													</a>
 												</dt>
 												<dd>
 													<h4>${pevent.getETitle() }</h4>
-													<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+													<p class="date">
+														<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+														~
+														<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+													</p>
 												</dd>
 											</dl>
 										</li>
@@ -79,58 +107,71 @@
 							<dt>종료된 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="endevent" items="${endEvent}" >
-										<fmt:parseDate value="${endevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-										<fmt:parseDate value="${endevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>
+									<c:forEach var="endevent" items="${endEvent}">
+										<fmt:parseDate value="${endevent.getEStartday()}"
+											var="startday" pattern="yyyy-MM-dd" />
+										<fmt:parseDate value="${endevent.getEEndday()}" var="endday"
+											pattern="yyyy-MM-dd" />
 										<li>
 											<dl>
 												<dt>
-													<a href="javascript:void(0)" data-eidx =${endevent.getEIdx() }>
-														<span class="event_close">
-															<i>
-																<img  src="${url}/resources/assets/images/commom/event_close.png">
-															</i>
-														</span>
-														<img  src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
+													<a href="javascript:void(0)"
+														data-eidx=${endevent.getEIdx() }> <span
+														class="event_close"> <i> <img
+																src="${url}/resources/assets/images/commom/event_close.png">
+														</i>
+													</span> <img
+														src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
 													</a>
 												</dt>
 												<dd>
 													<h4>${endevent.getETitle() }</h4>
-													<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+													<p class="date">
+														<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+														~
+														<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+													</p>
 												</dd>
 											</dl>
 										</li>
-										
+
 									</c:forEach>
 								</ul>
 							</dd>
 						</dl>
 					</div>
 				</article>
-				
+
 				<h3 class="card_event">
-					<a  href="javascript:void(0)">스타벅스 카드</a>
+					<a href="javascript:void(0)">스타벅스 카드</a>
 				</h3>
-				<article class="card" style="display:none">
+				<article class="card" style="display: none">
 					<div class="event_list">
 						<dl>
 							<dt>진행중 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="pevent" items="${pEvent}" >
+									<c:forEach var="pevent" items="${pEvent}">
 										<c:if test="${pevent.getEType() eq 'CARD' }">
-											<fmt:parseDate value="${pevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-											<fmt:parseDate value="${pevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>			
+											<fmt:parseDate value="${pevent.getEStartday()}"
+												var="startday" pattern="yyyy-MM-dd" />
+											<fmt:parseDate value="${pevent.getEEndday()}" var="endday"
+												pattern="yyyy-MM-dd" />
 											<li>
 												<dl>
 													<dt>
-														<a href="javascript:void(0)" data-eidx =${pevent.getEIdx() }>
-															<img  src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
+														<a href="javascript:void(0)"
+															data-eidx=${pevent.getEIdx() }> <img
+															src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
 														</a>
 													</dt>
 													<dd>
 														<h4>${pevent.getETitle() }</h4>
-														<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+														<p class="date">
+															<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+															~
+															<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+														</p>
 													</dd>
 												</dl>
 											</li>
@@ -141,20 +182,27 @@
 							<dt>종료된 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="endevent" items="${endEvent}" >
+									<c:forEach var="endevent" items="${endEvent}">
 										<c:if test="${endevent.getEType() eq 'CARD' }">
-											<fmt:parseDate value="${endevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-											<fmt:parseDate value="${endevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>
+											<fmt:parseDate value="${endevent.getEStartday()}"
+												var="startday" pattern="yyyy-MM-dd" />
+											<fmt:parseDate value="${endevent.getEEndday()}" var="endday"
+												pattern="yyyy-MM-dd" />
 											<li>
 												<dl>
 													<dt>
-														<a href="javascript:void(0)" data-eidx =${endevent.getEIdx() }>
-															<img  src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
+														<a href="javascript:void(0)"
+															data-eidx=${endevent.getEIdx() }> <img
+															src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
 														</a>
 													</dt>
 													<dd>
 														<h4>${endevent.getETitle() }</h4>
-														<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+														<p class="date">
+															<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+															~
+															<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+														</p>
 													</dd>
 												</dl>
 											</li>
@@ -166,28 +214,35 @@
 					</div>
 				</article>
 				<h3 class="reward_event">
-					<a  href="javascript:void(0)">스타벅스 리워드</a>
+					<a href="javascript:void(0)">스타벅스 리워드</a>
 				</h3>
-				<article class="reward" style="display:none">
+				<article class="reward" style="display: none">
 					<div class="event_list">
 						<dl>
 							<dt>진행중 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="pevent" items="${pEvent}" >
+									<c:forEach var="pevent" items="${pEvent}">
 										<c:if test="${pevent.getEType() eq 'REWARD' }">
-											<fmt:parseDate value="${pevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-											<fmt:parseDate value="${pevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>			
+											<fmt:parseDate value="${pevent.getEStartday()}"
+												var="startday" pattern="yyyy-MM-dd" />
+											<fmt:parseDate value="${pevent.getEEndday()}" var="endday"
+												pattern="yyyy-MM-dd" />
 											<li>
 												<dl>
 													<dt>
-														<a href="javascript:void(0)" data-eidx =${pevent.getEIdx() }>
-															<img  src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
+														<a href="javascript:void(0)"
+															data-eidx=${pevent.getEIdx() }> <img
+															src="${url}/resources/assets/images/event_img_test/${pevent.getESumnail()}">
 														</a>
 													</dt>
 													<dd>
 														<h4>${pevent.getETitle() }</h4>
-														<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+														<p class="date">
+															<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+															~
+															<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+														</p>
 													</dd>
 												</dl>
 											</li>
@@ -198,20 +253,27 @@
 							<dt>종료된 이벤트</dt>
 							<dd>
 								<ul>
-									<c:forEach var="endevent" items="${endEvent}" >
+									<c:forEach var="endevent" items="${endEvent}">
 										<c:if test="${endevent.getEType() eq 'REWARD' }">
-											<fmt:parseDate value="${endevent.getEStartday()}" var="startday" pattern="yyyy-MM-dd"/>
-											<fmt:parseDate value="${endevent.getEEndday()}" var="endday" pattern="yyyy-MM-dd"/>
+											<fmt:parseDate value="${endevent.getEStartday()}"
+												var="startday" pattern="yyyy-MM-dd" />
+											<fmt:parseDate value="${endevent.getEEndday()}" var="endday"
+												pattern="yyyy-MM-dd" />
 											<li>
 												<dl>
 													<dt>
-														<a href="javascript:void(0)" data-eidx =${endevent.getEIdx() }>
-															<img  src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
+														<a href="javascript:void(0)"
+															data-eidx=${endevent.getEIdx() }> <img
+															src="${url}/resources/assets/images/event_img_test/${endevent.getESumnail()}">
 														</a>
 													</dt>
 													<dd>
 														<h4>${endevent.getETitle() }</h4>
-														<p class="date"><fmt:formatDate value="${startday}" pattern="yyyy-MM-dd"/> ~ <fmt:formatDate value="${endday}" pattern="yyyy-MM-dd"/></p>
+														<p class="date">
+															<fmt:formatDate value="${startday}" pattern="yyyy-MM-dd" />
+															~
+															<fmt:formatDate value="${endday}" pattern="yyyy-MM-dd" />
+														</p>
 													</dd>
 												</dl>
 											</li>
@@ -227,5 +289,5 @@
 	</div>
 </div>
 
-<%@ include file="../Template/fotter.jsp" %>
+<%@ include file="../Template/fotter.jsp"%>
 
