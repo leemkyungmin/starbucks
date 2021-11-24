@@ -1,0 +1,137 @@
+@charset "UTF-8";
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
+
+h2, p, input, div, td, th, tr, a {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap {
+	width: 100%;
+}
+
+.title_wrap_inner {
+	height: 90px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.title_wrap_inner h2 {
+	color: #222222;
+	padding-top: 30px;
+	position: relative;
+}
+
+.wrap .notice_wrap {
+	width: 70%;
+	margin: 0 auto;
+}
+
+.search_wrap {
+	padding-bottom: 80px;
+	margin: 0 aut
+}
+
+.search_wrap .search_wrap_inner {
+	padding: 20px 30px;
+	height: 38px;
+	background: #f4f4f2;
+	border-radius: 3px;
+	margin-bottom: 40px;
+	position: relative;
+}
+
+.search_wrap .search_wrap_inner p {
+	position: absolute;
+	right: 30px;
+	top: 20px;
+}
+
+#search_notice {
+	width: 321px;
+	height: 36px;
+	line-height: 36px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	text-indent: 10px;
+	color: #666;
+}
+
+.search_wrap_inner p  a {
+	display: inline-block;
+	width: 54px;
+	height: 38px;
+	line-height: 38px;
+	background: #777;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+}
+
+.notice_table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.notice_table thead tr th {
+	font-size: 14px;
+	font-weight: bold;
+	color: #222222;
+	text-align: center;
+	padding: 17px 0;
+	border-top: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+}
+
+.notice_table tbody tr td {
+	font-size: 13px;
+	color: #666666;
+	text-align: center;
+	padding: 17px 0;
+	border-bottom: 1px solid #dddddd;
+	line-height: 1.8;
+}
+
+.notice_table tbody tr .left {
+	text-align: left;
+	padding-left: 20px;
+}
+
+.pageControll {
+	height: 27px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.pageControll ul {
+	text-align: center;
+}
+
+.pageControll ul li {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+
+.pageControll ul li a {
+	font-size: 14px;
+	color: #555555;
+}
+
+.pageControll ul .active a {
+	font-weight: bold;
+	color: #0d5f34;
+	border-bottom: 1px solid #0d5f34;
+}
+
+.pageControll ul .controll {
+	margin: 0 1px;
+}
+}

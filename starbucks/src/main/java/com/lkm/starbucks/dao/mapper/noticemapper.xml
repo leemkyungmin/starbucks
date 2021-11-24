@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lkm.starbucks.dao.noticedao">
+	
+	<select id="notice_list" parameterType="Map" resultType="com.lkm.starbucks.dto.noticedto" >
+		SELECT a.*
+		FROM (
+		       SELECT ROWNUM as rn,NOTICE.* FROM NOTICE ) a
+		WHERE rn between ${beginRecord} and ${endRecord}
+	</select>
+	
+	<select id="noticeCount" resultType="Integer">
+		SELECT COUNT(*)
+		FROM NOTICE
+	</select>
+	
+	<update id="update_hit">
+		UPDATE NOTICE 
+		SET NHIT = (SELECT NHIT FROM NOTICE WHERE NIDX= #{param1})+1
+		WHERE NIDX =#{param1}
+	</update>
+	
+	<select id="notice_view">
+		SELECT * 
+		FROM NOTICE
+		WHERE NIDX =#{param1}
+	</select>
+	
+</mapper>
