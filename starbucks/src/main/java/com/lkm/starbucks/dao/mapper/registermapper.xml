@@ -44,7 +44,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			'${uNickName}',
 			'${uEmail}',
 			'${uPhone}',
-			'일반',
+			'Welcome Level',
 			SYSDATE,
 			0,
 			0

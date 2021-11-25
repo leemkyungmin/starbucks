@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+h4, h3, div, p, span {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap {
+	width: 100%;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .heaer_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .heaer_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .heaer_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	left: 50%;
+	margin: 50px 0 0 -550px;
+	position: relative;
+	width: 60%;
+	min-height: 900px;
+}
+
+.wrap_content .mystarbucks_content {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+
+.wrap_content .mystarbucks_content .user_info {
+	width: 100%;
+	height: 300px;
+}
+
+.wrap_content .mystarbucks_content .user_info .user_level {
+	float: left;
+	width: 49%;
+	height: 100%;
+	border-right: 1px solid black;
+	background: #ddd;
+}
+.wrap_content .mystarbucks_content .user_info .user_level .user_pic {
+	width: 50%;
+	height: 200px;
+	margin:0 auto;
+}
+.wrap_content .mystarbucks_content .user_info .user_level .user_pic svg,.wrap_content .mystarbucks_content .user_info .user_level .user_pic img{
+	width: 100%;
+	height: 150px;
+	padding-top:25px;
+	padding-bottom:25px;
+	
+	
+}
+
+.user_info .user_level .user_content_info{
+	width: 100%;
+	position: relative;
+}
+.user_info .user_level .user_content_info p{
+	width: 100%;
+	text-align: center;
+}
+.user_info .user_level .user_content_info p .user_txt_bold{
+	font-weight: bold;
+	color:#222;
+}
+
+.wrap_content .mystarbucks_content .user_info .user_star {
+	float: right;
+	width: 49%;
+	height: 100%;
+	background: #ddd;
+	padding-left:13px; 
+}
+.wrap_content .mystarbucks_content .user_info .user_star .star_title {
+	width: 100%;
+	height: 25px;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .star_title h3{
+	height: 25px;
+	margin-top: 25px;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .star_pic{
+	width: 49%;
+	height:150px;
+	margin: 0 auto;
+	position: relative;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .star_pic svg{
+	position:absolute;
+	top:-25px;
+	width: 100%;
+	height: 150px;
+	color:#ffd700;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .star_pic .star_count{
+	position: absolute;
+	top:5%;
+	left: 40%;
+	font-size: 70px;
+	color: #222;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .levelup_content{
+	width: 100%;
+}
+.wrap_content .mystarbucks_content .user_info .user_star .levelup_content p{
+	width: 100%;
+	text-align: center;
+}
+.star_left_count,.star_txt,.card_count_bold{
+	font-weight: bold;
+	color: #222;
+	
+}
+.star_txt{
+	font-size: 17px;
+    height: 100%;
+}
+.content_green{
+	font-weight: bold;
+	color: #1ae61a;
+	font-size: 17px;
+}
+.mycard_list{
+	margin-top: 30px;
+	width: 100%;
+	height: 341px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-shadow: 3px 2px 3px 3px lightgray;
+	position: relative;
+}
+.mycard_list .mycard_title{
+
+	height: 20px;
+	padding: 20px 0 20px 0;
+	margin: 0 15px 0 15px;
+	border-bottom: 1px solid black;
+}
+.mycard_list .mycard_title h3,.mycard_list .mycard_title p{
+	display:inline-block;
+}
+.mycard_list .Repcard_pic{
+	width: 49%;
+	float:left;
+	height: 280px;
+}
+.mycard_list .Repcard_info{
+	width: 49%;
+	padding-left: 13px;
+	float:left;
+	height: 280px;
+}
+.mycard_list .Repcard_pic svg,.mycard_list .Repcard_pic img{
+	width: 50%;
+	height: 250px;
+	float:right;
+	padding-right: 20px;
+}

@@ -16,13 +16,14 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script src="${url}/resources/assets/js/header.js"></script>
 <title>StarBucks</title>
 
 <script type="text/javascript">
 	$().ready(function(){
 		//로그인 상태 확인 
-		if(${sessionScope.login !=null} ){
+		if(${sessionScope.udto !=null} ){
 			$('.sign_out').css({'display' :'block'});  
 			$('.sign_in').css({'display' :'none'});	
 		} else {
@@ -88,6 +89,17 @@
 			
 			$(this).slideUp();
 		});
+		
+		//my satrbucks
+		$('#mystarbucks').on('click',function(){
+			
+			if(  ${sessionScope.login eq null} ){
+				location.href="${url}/login/loginPage?redirect_url=my/index";
+			} else {
+				location.href="${url}/my/index";
+			}
+			
+		})
 		
 	});
 		

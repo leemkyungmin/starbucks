@@ -36,8 +36,9 @@ public class logincontroller {
 	private SqlSession sqlsession;
 	private command command;
 	
-	@RequestMapping("login/loginPage")
+	@RequestMapping(value="login/loginPage",method=RequestMethod.GET)
 	public String goLogin(HttpServletRequest req,Model model) {
+		model.addAttribute("redirect", req.getParameter("redirect_url"));
 		
 		return "login/login";
 	}
@@ -55,6 +56,7 @@ public class logincontroller {
 		udto =idao.logincheck(id,pw);
 		if(udto !=null) {
 			req.getSession().setAttribute("login", "login");
+			req.getSession().setAttribute("udto", udto);
 			req.getSession().setAttribute("uIdx", udto.getUIdx());
 			req.getSession().setAttribute("uNickname",udto.getUNickName());
 			req.getSession().setAttribute("uPower",udto.getUPower());

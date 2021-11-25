@@ -8,8 +8,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="notice_list" parameterType="Map" resultType="com.lkm.starbucks.dto.noticedto" >
 		SELECT a.*
 		FROM (
-		       SELECT ROWNUM as rn,NOTICE.* FROM NOTICE ) a
+		       SELECT ROWNUM as rn,NOTICE.* FROM NOTICE ORDER BY NIDX desc) a
 		WHERE rn between ${beginRecord} and ${endRecord}
+		
 	</select>
 	
 	<select id="noticeCount" resultType="Integer">
@@ -23,10 +24,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE NIDX =#{param1}
 	</update>
 	
-	<select id="notice_view">
+	<select id="notice_view" resultType="com.lkm.starbucks.dto.noticedto">
 		SELECT * 
 		FROM NOTICE
 		WHERE NIDX =#{param1}
+		
 	</select>
+	
+	<select id="next_notice_data" resultType="com.lkm.starbucks.dto.noticedto">
+		SELECT *
+		FROM NOTICE 
+		WHERE NIDX = #{param1}
+	</select>
+	
+	
 	
 </mapper>

@@ -44,7 +44,7 @@ public class noticecontroller {
 		
 		
 		
-		return "";
+		return "notice/notice_view";
 	}
 	
 }

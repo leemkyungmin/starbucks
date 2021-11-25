@@ -5,7 +5,7 @@
 <script>
 	$().ready(function(){
 		
-		if( ${sessionScope.login !=null} ){
+		if( ${sessionScope.udto !=null} ){
 			location.href = document.referrer;
 		}
 		
@@ -26,7 +26,6 @@
 			
 			var id =$('#user_id');
 			var pw =$('#user_pw');
-			console.log('id : '+id.val() +'&pw : '+pw.val());
 			if(id.val().length ==0 ){
 				alert('아이디를 입력해주세요');
 				id.foucs();
@@ -49,8 +48,16 @@
 							} else {
 								localStorage.removeItem('id');
 							}
+							
 							alert(result+'님 반갑습니다.');
-							location.href = document.referrer;
+							if(${redirect eq null}){
+								
+								location.href = document.referrer;
+							} else {
+								location.href='${url}/${redirect}';
+							}
+							
+							
 							
 						} else {
 							alert('아이디 비밀번호를 확인해주세요 ');

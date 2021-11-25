@@ -28,7 +28,15 @@ public class notice_viewcommand implements command {
 		noticedto ndto = ndao.notice_view(nidx);
 		
 		model.addAttribute("ndto", ndto);
-				
+		
+		
+		
+		noticedto next = ndao.next_notice_data(Integer.parseInt(nidx) +1);
+		noticedto prev = ndao.next_notice_data(Integer.parseInt(nidx) -1);
+		
+		
+		model.addAttribute("next", next);
+		model.addAttribute("prev", prev);
 		
 	}
 

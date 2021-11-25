@@ -14,4 +14,6 @@ public interface noticedao {
 	public void update_hit(String nidx);
 	
 	public noticedto notice_view(String nidx);
+	
+	public noticedto next_notice_data(int next);
 }

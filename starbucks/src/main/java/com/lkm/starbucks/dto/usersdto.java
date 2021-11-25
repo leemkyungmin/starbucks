@@ -19,11 +19,12 @@ public class usersdto {
 	public Date uDate;
 	public int uStarcount;
 	public String uPower;
+	public String uPicture;
 	
 	public usersdto (){}
 
 	public usersdto(int uIdx, String uIds, String uPw, String uPhone, String uEmail, String uNickName, String uGrade,
-			Date uDate, int uStarcount, String uPower) {
+			Date uDate, int uStarcount, String uPower, String uPicture) {
 		super();
 		this.uIdx = uIdx;
 		this.uIds = uIds;
@@ -35,7 +36,10 @@ public class usersdto {
 		this.uDate = uDate;
 		this.uStarcount = uStarcount;
 		this.uPower = uPower;
+		this.uPicture = uPicture;
 	}
+
+	
 	
 	
 	

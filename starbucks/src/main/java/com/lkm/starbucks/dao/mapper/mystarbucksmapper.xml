@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.lkm.starbucks.dao.mystarbucksdao">
+	
+	<select id="getCardList" resultType="com.lkm.starbucks.dto.user_card_listdto">
+		SELECT * 
+		FROM USER_CARD_LIST
+		WHERE UIDX = #{param1}
+		ORDER BY uclRepcard
+	
+	</select>
+	
+	<select id="getCardinfo" parameterType="com.lkm.starbucks.dto.card_listdto">
+		SELECT *
+		FROM CARD_LIST
+		WHERE CLIDX = #{param1}
+	</select>
+	
+	
+</mapper>
