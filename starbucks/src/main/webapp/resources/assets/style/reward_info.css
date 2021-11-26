@@ -1,0 +1,431 @@
+@charset "UTF-8";
+
+h4, h3, div, p, span, section, dl, dd, dt, h5 {
+	padding: 0;
+	margin: 0;
+}
+
+.wrap {
+	position: relative;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .heaer_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .heaer_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .heaer_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	left: 50%;
+	margin: 50px 0 0 -550px;
+	position: relative;
+	width: 70%;
+	/*min-height: 1650px;*/
+}
+
+.wrap_content .reward_info_content {
+	float: left;
+	width: 76%;
+}
+
+.wrap_content .rewardcard_info_wrap {
+	background: #f4f4f2;
+	border-radius: 3px;
+	padding: 30px 0 0 0;
+	margin-bottom: 10px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl {
+	position: relative;
+	padding: 0 30px 0 30px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.tbox h5 {
+	font-size: 18px;
+	color: #222;
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.tbox .arrow
+	{
+	display: block;
+	background: url(../images/commom/reward/btn_arrow_down.png) 0 0 no-repeat;
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	right: 25px;
+	top: -10px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.tbox .arrow a
+	{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -2000px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.tbox.on .arrow
+	{
+	display: block;
+	background: url(../images/commom/reward/btn_arrow_up.png) 0 0 no-repeat;
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	right: 25px;
+	top: -10px;
+}
+
+.en {
+	font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.box {
+	padding: 30px 0 30px 0;
+	border-top: 1px solid #eceae5;
+	display: none;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.box .t1 {
+	font-size: 18px;
+	color: #006341;
+	padding-bottom: 15px;
+}
+
+.wrap_content .rewardcard_info_wrap .rewardcard_info_inner>dl>.box .t2 {
+	font-size: 14px;
+	color: #222;
+	line-height: 1.6;
+}
+
+.rewardcard_info2_wrap {
+	background: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 30px 0 0 0;
+	margin-bottom: 10px;
+}
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 {
+	position: relative;
+	padding: 0 30px 0 30px;
+	
+}
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .tbox h5 {
+	font-size: 18px;
+	color: #222;
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .tbox .arrow {
+	display: block;
+	background: url(../images/commom/reward/btn_arrow2_down.png) 0 0 no-repeat;
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	right: 25px;
+	top: -10px;
+}
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .tbox .arrow a
+	{
+	display: block;
+	width: 100%;
+	height: 100%;
+	text-indent: -2000px;
+}
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .tbox.on .arrow
+	{
+	display: block;
+	background: url(../images/commom/reward/btn_arrow2_up.png) 0 0 no-repeat;
+	width: 42px;
+	height: 42px;
+	position: absolute;
+	right: 25px;
+	top: -10px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box{
+	padding: 30px 0 30px 0;
+    border-top: 1px solid #eceae5;
+    display: none;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .t1{
+	font-size: 18px;
+    color: #006341;
+    padding-bottom: 15px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .t2{
+	font-size: 14px;
+    color: #222;
+    line-height: 1.6;
+    padding-bottom: 10px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .utxt li{
+	font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .t3{
+	font-size: 18px;
+    color: #006341;
+    padding: 25px 0 30px 0;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap{
+	height: 195px;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 760px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap .r_star_bg1{
+	background: url(../images/commom/reward/r_star_bg1.png) center 30px no-repeat;
+    background-size: 100% auto;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap .r_star_bg2{
+	background: url(../images/commom/reward/r_star_bg2.png) center 30px no-repeat;
+    background-size: 100% auto;
+    margin-left: 80px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap .r_star_bg3{
+	background: url(../images/commom/reward/r_star_bg3.png) center 30px no-repeat;
+    background-size: 100% auto;
+    margin-left: 80px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap li{
+	float: left;
+    height: 195px;
+    position: relative;
+    width: 193px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap li .r_star_num{
+	    color: #fff;
+    font-size: 12px;
+    height: 19px;
+    left: 50%;
+    line-height: 19px;
+    margin-left: -17px;
+    position: absolute;
+    text-align: center;
+    top: 48px;
+    width: 34px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap li dl{
+	font-weight: bold;
+    margin-top: 90px;
+    text-align: center;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap li dl dt{
+	color: #222;
+    font-size: 18px;
+}
+.rewardcard_info2_wrap .rewardcard_info_inner .info_box2 .box .r_star_bg_wrap li dl dd{
+	color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.rewardcard_info3_wrap{
+	background: #f4f4f2;
+    border-radius: 3px;
+    padding: 30px 0 0 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3{
+	position: relative;
+	padding: 0 30px 30px 30px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .tbox h5{
+	font-size: 18px;
+    color: #222;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .tbox .arrow{
+	display: block;
+    background: url(../images/commom/reward/btn_arrow_down.png) 0 0 no-repeat;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    right: 25px;
+    top: -10px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .tbox .arrow a{
+	display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -2000px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .tbox.on .arrow{
+	display: block;
+    background: url(../images/commom/reward/btn_arrow_up.png) 0 0 no-repeat;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+    right: 25px;
+    top: -10px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box{
+	padding: 30px 0 30px 0;
+    border-top: 1px solid #eceae5;
+    display: none;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap{
+	margin: 0 auto;
+    overflow: hidden;
+    width: 769px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li{
+	width: 33.33%;
+    box-sizing: border-box;
+    float: left;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl{
+	padding: 0 3% 0 0;
+	box-sizing: border-box;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dt{
+	position: relative;
+    height: 240px;
+    width: 94%;
+    margin: 0 auto;
+    background: url(../images/commom/reward/tex_star_bg1.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >.level2 dl dt{
+	position: relative;
+    height: 240px;
+    width: 94%;
+    margin: 0 auto;
+    background: url(../images/commom/reward/tex_star_bg2.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >.level3 dl dt{
+	position: relative;
+    height: 240px;
+    width: 94%;
+    margin: 0 auto;
+    background: url(../images/commom/reward/tex_star_bg3.png) 0 0 no-repeat;
+    background-size: 100% auto;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dt .num{
+	top:87px;
+	color: #fff;
+    font-size: 14px;
+    height: 20px;
+    left: 0;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dt p{
+	color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 120px;
+    text-align: center;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dt p .level_guide{
+	color: #444;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd{
+	width: 94%;
+    margin: 0 auto;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd ul{
+	padding-top: 30px;
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd ul li{
+	color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: 8px;
+
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd .include_level_adv {
+	background: #fff;
+    border-radius: 3px;
+    color: #444;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+	margin: 30px 0 0 0;
+    width: 100%;
+    text-align: center;
+    width: 230px;
+
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd .leverTxt {
+	text-align: center;
+    padding-top: 5px;
+    font-size: 14px;
+    color: #666;
+
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd ul {
+	padding-top: 11px;
+
+}
+.rewardcard_info3_wrap .rewardcard_info_inner .info_box3 .box .level_wrap >li dl dd ul li{
+	color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    padding-bottom: 8px;
+
+}
+
+
+.t_006633{
+	color: #006633;
+}
+.c_88722e {
+    color: #88722e !important;
+}
+.t_1d191b{
+	color: #1d191b;
+}
+.c_007042 {
+    color: #007042 !important;
+}
+
+

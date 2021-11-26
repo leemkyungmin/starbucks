@@ -64,7 +64,7 @@
 								</p>
 							</div>
 						</c:if>
-						<c:if test="${udto.getUGrade() eq 'Welcome Level' }">
+						<c:if test="${udto.getUGrade() eq 'Gold Level' }">
 							<div class="levelup_content">
 								<p> 
 									별<span class="star_left_count">12</span>개의 적립시 무료 음료<br/>1잔을 드립니다.
@@ -93,7 +93,26 @@
 							<img src="${cldto.getClImg() }"> <!--  -->
 						</c:if>
 					</div>
-					<div class="Repcard_info"></div>
+					<div class="Repcard_info">
+						<div class="repcard_inner">
+							<c:if test="${cardcount eq 0 }">
+								<p>
+									아직 등록하신 카드가 없습니다 .<br/>
+								</p>
+									<a href="${url}/my/card/new_card">카드 등록하러가기</a> 
+							</c:if>
+							<c:if test="${cardcount ne 0 }">
+								<div class="my_card_info">
+									<h4>${cldto.getClName() }</h4>
+									<p>카드 잔액 : ${cldto.getClMoney() }</p>
+								</div>
+									<div class="my_card_controll">
+										<a href="javascript:void(0)">충전하기</a>
+										<a href="javascript:void(0)">카드 혜택</a> 
+									</div>
+							</c:if>
+						</div>
+					</div>
 					
 					
 				</div>

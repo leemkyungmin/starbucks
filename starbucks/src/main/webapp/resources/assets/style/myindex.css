@@ -44,7 +44,7 @@ h4, h3, div, p, span {
 	left: 50%;
 	margin: 50px 0 0 -550px;
 	position: relative;
-	width: 60%;
+	width: 70%;
 	min-height: 900px;
 }
 
@@ -178,10 +178,57 @@ h4, h3, div, p, span {
 	padding-left: 13px;
 	float:left;
 	height: 280px;
+	border-left: 2px solid #ddd;
 }
 .mycard_list .Repcard_pic svg,.mycard_list .Repcard_pic img{
 	width: 50%;
 	height: 250px;
 	float:right;
 	padding-right: 20px;
+}
+.Repcard_info .repcard_inner{
+	width: 100%;
+	padding:76px 0 40px 0;
+	text-align: center;
+}
+.Repcard_info .repcard_inner p{
+	margin-bottom: 15px;
+	
+	
+}
+.Repcard_info .repcard_inner > a{
+	padding:5px;
+	border:1px solid black;
+	background: #e2c383;
+	border-radius: 2px;
+	text-align: center;
+}
+.Repcard_info .repcard_inner .my_card_info{
+	width: 70%;
+	text-align: center;
+}
+.Repcard_info .repcard_inner  .my_card_controll{
+	width: 100%;
+	height: 40px;
+}
+.Repcard_info .repcard_inner  .my_card_controll a{
+	margin-left: 40px; 
+	padding:5px;
+	border:1px solid black;
+	background: #e2c383;
+	border-radius: 2px;
+	width: 110px;
+	display:inline-block;
+	text-align: center;
+}
+.Repcard_info .repcard_inner  .my_card_controll a:nth-child(2){
+	margin-left: 40px; 
+	padding:5px;
+	border:1px solid white;
+	color:white;
+	background: #222;
+	border-radius: 2px;
+	width: 110px;
+	display:inline-block;
+	text-align: center;
 }

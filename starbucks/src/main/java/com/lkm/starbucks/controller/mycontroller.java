@@ -41,5 +41,19 @@ public class mycontroller {
 	}
 	
 	
+	@RequestMapping(value="my/reward/reward_info",method=RequestMethod.GET)
+	public String reward_info(HttpServletRequest req, Model model) {
+		if(req.getSession().getAttribute("udto") ==null) {
+			
+			String redirect_url = "my/reward/reward_info";
+			
+			return "redirect:/login/loginPage?redirect_url="+redirect_url;
+			
+		} else {
+			
+			return  "mystarbucks/reward/reward_info";
+		}
+	}
+	
 	
 }

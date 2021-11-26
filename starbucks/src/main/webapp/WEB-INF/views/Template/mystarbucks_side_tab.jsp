@@ -2,6 +2,24 @@
     pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="${url}/resources/assets/style/mystarbucks_side_tab.css">
     
+    <script>
+    	$().ready(function(){
+    		$('.side_tab >ul >li').on('click',function(){
+    			
+    
+    			if($(this).find('span').hasClass('arrow_up')){
+    				$(this).find('span').removeClass('arrow_up');
+    				$(this).find('ul').css({'display' : 'none'});
+    			} else {
+    				
+    				$(this).find('span').addClass('arrow_up');
+    				$(this).find('ul').css({'display' : 'block'});
+    			}
+    			
+    		});
+    	});
+    </script>
+    
   	<div class="side_tab">
   		<ul>
   			<li>
