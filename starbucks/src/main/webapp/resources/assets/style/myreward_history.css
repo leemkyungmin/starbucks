@@ -1,0 +1,259 @@
+@charset "UTF-8";
+input{
+	padding:0;
+	margin:0;
+}
+.wrap {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .heaer_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .heaer_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .heaer_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	position: relative;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 50px;
+	/*min-height: 1650px;*/
+}
+
+.wrap_content .reward_history_wrap {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+
+.myreward_info {
+	padding-bottom: 30px;
+}
+
+.myreward_info .myreward_info_inner {
+	height: 100px;
+	margin-left: -9px;
+	overflow: hidden;
+	width: 100%;
+}
+
+.myreward_info .myreward_info_inner li {
+	border: 1px solid #ddd;
+	float: left;
+	height: 100px;
+	padding: 20px 0 0 0;
+	position: relative;
+	width: 25%;
+	text-align: center;
+}
+
+.box2 .t1 {
+	display: inline-block;
+}
+
+.myreward_info .myreward_info_inner .box1 .t1 {
+	color: #222;
+}
+
+.myreward_info .myreward_info_inner li .t1 {
+	color: #222;
+	font-size: 14px;
+}
+
+.myreward_info .myreward_info_inner li .t2 {
+	color: #222;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.myreward_info .myreward_info_inner .box1 .t2 {
+	color: #222;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.myreward_info .myreward_info_inner li .star_month_reward {
+	color: #666;
+	font-size: 12px;
+}
+
+.date_picker_controll {
+	background: #f4f4f2;
+	border-radius: 3px;
+	min-height: 60px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.date_picker_controll .date_radio_picker {
+	background: url(../images/commom/reward/my_card_pick_bg.gif) 0 0;
+	float: left;
+	height: 28px;
+	margin: 16px 0 0 30px;
+	width: 298px;
+}
+
+.date_picker_controll .date_radio_picker dt {
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	width: 48px;
+	float: left;
+}
+
+.date_picker_controll .date_radio_picker dd {
+	color: #444;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	width: 230px;
+}
+
+.date_picker_controll .date_radio_picker dd input {
+	height: 13px;
+	margin: 8px 0 0 13px;
+	width: 13px;
+	float: left;
+}
+
+.date_picker_controll .date_radio_picker dd label {
+	margin: 0 0 0 5px;
+	float: left;
+}
+
+.date_time_picker {
+	float: right;
+	height: 28px;
+	margin: 16px 30px 0 0;
+	width: 394px;
+}
+
+.date_time_picker dt {
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	width: 48px;
+	float: left;
+}
+
+.date_time_picker dd {
+	color: #444; font-size : 12px; height : 30px; line-height : 30px; width
+	: 338px;
+	float: left;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	width: 338px; float : left; 
+}
+ .date_time_picker dd .pick_date_each {
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	float: left;
+	height: 26px;
+	width: 133px;
+	position: relative;
+}
+
+.date_time_picker dd .pick_date_each .pick_date_each_left {
+	border-right: 1px solid #ddd;
+	float: left;
+	height: 26px;
+	width: 102px;
+	width: 133px;
+}
+
+.date_time_picker dd input {
+	border: none;
+	height: 26px;
+	line-height: 28px;
+	text-indent: 10px;
+	width: 102px;
+	padding-top: 4px;
+	font-size: 16px;
+}
+
+.date_time_picker input[type="text"] {
+	outline: none;
+}
+
+.date_time_picker dd .pick_date_each .pick_date_each_right {
+	float: left;
+    height: 26px;
+    width: 30px;
+    position: absolute;
+    right: 0px;
+}
+.date_time_picker dd .pick_date_each .pick_date_each_right label{
+	background: url(../images/commom/reward/icon_calendar.gif);
+    cursor: pointer;
+    float: left;
+    height: 14px;
+    margin: 6px 0 0 8px;
+    overflow: hidden;
+    text-indent: -20000px;
+    width: 14px;
+}
+.pick_slider{
+	float: left;
+    height: 28px;
+    width: 16px;
+}
+.btn_pick_date{
+	float: right;
+    height: 28px;
+    width: 40px;
+}
+.btn_pick_date a{
+	background: #777;
+    border-radius: 3px;
+    color: #fff;
+    display: block;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+}
+.odd{
+	background: #ddd;
+}
+table{
+	text-align: center;
+}
+table.dataTable>thead .sorting:before{
+	content: "" !important;
+}
+table.dataTable>thead .sorting:after{
+	content: "" !important;
+}

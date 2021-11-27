@@ -5,6 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.lkm.starbucks.dao.mystarbucksdao">
 	
+	<!-- my/index -->
 	<select id="getCardList" resultType="com.lkm.starbucks.dto.user_card_listdto">
 		SELECT * 
 		FROM USER_CARD_LIST
@@ -13,11 +14,40 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	</select>
 	
-	<select id="getCardinfo" parameterType="com.lkm.starbucks.dto.card_listdto">
+	<select id="getCardinfo" resultType="com.lkm.starbucks.dto.card_listdto">
 		SELECT *
 		FROM CARD_LIST
 		WHERE CLIDX = #{param1}
 	</select>
 	
+	
+	<!--  my/reward/my_reward_history -->
+	
+	<select id="reward_history" parameterType="Map" resultType="com.lkm.starbucks.dto.myrewarddto">
+		SELECT mr.*,bi.BNAME
+		FROM MYREWARD mr,ORDER_LIST ol,BRANCH_INFO bi
+		WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND (mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND ol.bidx = bi.bidx
+        GROUP BY mr.ONUM,mr.MRIDX,mr.MRMONEY,mr.MRSTAR,mr.MRDATE,bi.BNAME
+        ORDER BY mr.MRDATE DESC
+	</select>
+	
+	<select id="month_reward" parameterType="Map" resultType="Integer">
+		SELECT NVL(sum(a.mrstar),0)
+		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND (mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND mr.mrstar>0]]>
+        group by mr.mridx,mr.onum,mr.mrstar) a
+	</select>
+	<select id="total_reward" parameterType="Map" resultType="Integer">
+		SELECT NVL(sum(a.mrstar),0)
+		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND mr.mrstar>0]]>
+        group by mr.mridx,mr.onum,mr.mrstar) a
+	</select>
+	<select id="use_reward" parameterType="Map" resultType="Integer"> 
+		SELECT NVL(sum(a.mrstar)*-1,0)
+		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx}  AND mr.mrstar<0]]>
+        group by mr.mridx,mr.onum,mr.mrstar) a
+	</select>
 	
 </mapper>
