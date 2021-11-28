@@ -257,3 +257,15 @@ table.dataTable>thead .sorting:before{
 table.dataTable>thead .sorting:after{
 	content: "" !important;
 }
+.datepicker{
+	width: 300px; 
+}
+.datepicker >div{
+	width: 100%; 
+}
+.datepicker >div table{
+	width: 100%; 
+}
+.odd,.even{
+	cursor: pointer;
+}
