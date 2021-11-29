@@ -269,3 +269,49 @@ table.dataTable>thead .sorting:after{
 .odd,.even{
 	cursor: pointer;
 }
+.modal{
+	width: 100%;
+	
+}
+.modal .modal-dialog{
+	max-width: 800px !important;
+	
+}
+.modal .modal-dialog .modal-content{
+	min-height: 500px;
+}
+.order_info{
+	width: 100%;
+	padding:20px 10px;
+	border-collapse: collapse;
+	text-align: center;
+	font-size: 16px;
+}
+
+.order_info tr{
+	padding-bottom:10px;
+	height: 30px;
+	border-bottom: 1px solid gray;
+	
+}
+.order_info td{
+	height: 30px;
+}
+.order_info thead{
+	border:1px solid gray;
+}
+.order_info thead th{
+	border-right: 1px solid gray;
+}
+.order_info thead th:last-child{
+	border-right: 0
+}
+.order_info .both_box{
+	border-right:1px solid gray; 
+	border-left:1px solid gray;
+	vertical-align: middle;
+}
+.order_info .right_box{
+	border-right:1px solid gray; 
+	vertical-align: middle;
+}

@@ -164,9 +164,64 @@
 		});;
 		
 		
-		$('#dataTable_wrapper table tbody tr').on('click',function(){
+		$(document).on('click','#dataTable_wrapper table tbody tr',function(){
 			
 			var oNum =$(this).data('target');
+			
+			$.ajax({
+				url : '${url}/my/reeward/oder_list_ajax',
+				data : 'oNum='+oNum,
+				method : "post",
+				success:function(data){
+					
+					var html ='';
+					
+					html +=		'<table class="order_info">';
+					html +=		'<thead>';
+					html +=		'<tr>';
+					
+					html +=		'<th>주문번호</th>';
+					html +=		'<th>주문지점</th>';
+					html +=		'<th>제품명</th>';
+					html +=		'<th>수량</th>';
+					html +=		'<th>금액</th>';
+					html +=		'<th>주문상태</th>';
+					html +=		'<th>주문일</th>';
+					
+					html +=		'</tr>';
+					html +=		'</thead>';
+					html +=		'<tbody>';
+					for(var i=0; i<data.length; i++){
+						html +=	'<tr>';
+						if(i==0){
+							html +='<td class="both_box" rowspan='+data.length+'>'+data[i].oNum+'</td>';
+							html +=	'<td class="right_box" rowspan='+data.length+'>'+data[i].bName+'</td>';
+						}
+						html +=	'<td>'+data[i].oName+'</td>';
+						html +=	'<td>'+data[i].oCount+'(ea)</td>';
+						html +=	'<td>'+(data[i].oPrice).toLocaleString()+'원</td>';
+						html +=	'<td>'+(data[i].oStatus ==1 ? "주문접수중" :data[i].oStatus ==2 ? "판매완료" : "취소")+'</td>';
+						if(i==0){
+							var year=data[i].oDate.substring(0,4);
+							var month=data[i].oDate.substring(5,7);
+							var date=data[i].oDate.substring(8,10);
+							
+							html +=	'<td class="both_box" rowspan='+data.length+'>'+year+'-'+month+'-'+date+'</td>';
+						}
+						html +=	'</tr>';
+						
+					}
+					html +=	'</tbody>';
+					html +=		'</table>';
+					$('.modal-body').text('');
+					$('.modal-body').append(html);
+					
+					
+					
+				},error:function(){
+					console.log('ajax통신 실패');
+				}
+			});
 			
 			/* 
 				주문번호로 선택한 주문데이터를 modal 창에 출력 하기 
