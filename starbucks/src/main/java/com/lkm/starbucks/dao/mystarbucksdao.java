@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.lkm.starbucks.dto.card_listdto;
 import com.lkm.starbucks.dto.myrewarddto;
+import com.lkm.starbucks.dto.order_listdto;
 import com.lkm.starbucks.dto.user_card_listdto;
 
 public interface mystarbucksdao {
@@ -20,5 +21,16 @@ public interface mystarbucksdao {
 	public int month_reward(Map<String,Object> params);
 	public int total_reward(Map<String,Object> params);
 	public int use_reward(Map<String,Object> params);
+	
+	public ArrayList<order_listdto> get_order_info(Map<String,Object> params);
+	
+	/* 
+	 * 	my/card/...
+	 * */
+	
+	public ArrayList<card_listdto> getcardlist();
+	
+	public int update_per_card(int uidx);
+	public int insert_card(Map<String,Object> params);
 	
 }

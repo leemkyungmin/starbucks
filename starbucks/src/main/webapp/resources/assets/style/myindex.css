@@ -180,11 +180,18 @@ h4, h3, div, p, span {
 	height: 280px;
 	border-left: 2px solid #ddd;
 }
-.mycard_list .Repcard_pic svg,.mycard_list .Repcard_pic img{
+.mycard_list .Repcard_pic svg{
 	width: 50%;
 	height: 250px;
 	float:right;
 	padding-right: 20px;
+}
+.mycard_list .Repcard_pic img{
+	width: 80%;
+    height: 250px;
+    float: right;
+    padding-right: 20px;
+    padding-top: 10px;
 }
 .Repcard_info .repcard_inner{
 	width: 100%;

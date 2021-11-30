@@ -20,6 +20,7 @@ import com.lkm.starbucks.command.mystarbucks.my_reward_historycommand;
 import com.lkm.starbucks.command.mystarbucks.mystarbucks_indexcommand;
 import com.lkm.starbucks.dao.mystarbucksdao;
 import com.lkm.starbucks.dto.myrewarddto;
+import com.lkm.starbucks.dto.order_listdto;
 import com.lkm.starbucks.dto.usersdto;
 
 @Controller
@@ -104,6 +105,24 @@ public class mycontroller {
 		
 		
 		return mylist_ajax;
+	}
+	
+	@RequestMapping(value="my/reeward/oder_list_ajax",method=RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<order_listdto> getOrder_info(HttpServletRequest req,Model model){
+		
+		
+		ArrayList<order_listdto> olist = new ArrayList<order_listdto>();
+		
+		Map<String,Object> params = new HashMap<String, Object>();
+		params.put("oNum",req.getParameter("oNum"));
+		
+		mystarbucksdao mdao = sqlsession.getMapper(mystarbucksdao.class);
+		
+		olist = mdao.get_order_info(params);
+		
+		return olist;
+		
 	}
 
 }

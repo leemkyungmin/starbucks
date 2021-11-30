@@ -89,8 +89,7 @@
 							<i class="far fa-credit-card fa-5x"></i>
 						</c:if>
 						<c:if test="${cardcount ne 0 }">
-							111111
-							<img src="${cldto.getClImg() }"> <!--  -->
+							<img src="${url}/resources/assets/images/card_img_test/${cldto.getClImg() }"> <!--  -->
 						</c:if>
 					</div>
 					<div class="Repcard_info">
@@ -103,8 +102,8 @@
 							</c:if>
 							<c:if test="${cardcount ne 0 }">
 								<div class="my_card_info">
-									<h4>${cldto.getClName() }</h4>
-									<p>카드 잔액 : ${cldto.getClMoney() }</p>
+									<h4>${cardlist.get(0).getUclName() }</h4>
+									<p>카드 잔액 : ${cardlist.get(0).getUclMoney() }</p>
 								</div>
 									<div class="my_card_controll">
 										<a href="javascript:void(0)">충전하기</a>

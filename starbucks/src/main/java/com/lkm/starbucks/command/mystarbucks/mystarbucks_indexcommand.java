@@ -33,9 +33,10 @@ public class mystarbucks_indexcommand implements command {
 		ArrayList<user_card_listdto> user_cardlist = mydao.getCardList(uidx);
 		
 		if(user_cardlist.size() >0) { 
-			int clidx = user_cardlist.get(0).getUclIdx();
+			int clidx = user_cardlist.get(0).getClIdx();
 			
 			card_listdto cldto  = mydao.getCardinfo(clidx);
+			System.out.println(cldto);
 			model.addAttribute("cldto", cldto);
 		}
 		

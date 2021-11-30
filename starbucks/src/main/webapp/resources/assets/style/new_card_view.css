@@ -1,0 +1,231 @@
+@charset "UTF-8";
+
+.modal{
+	width: 100%;
+	
+}
+.modal .modal-dialog{
+	max-width: 800px !important;
+	
+}
+.modal .modal-dialog .modal-content{
+	min-height: 500px;
+}
+
+.wrap {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.wrap .title_wrap {
+	width: 100%;
+	height: 90px;
+	margin-top: 20px;
+}
+
+.wrap .title_wrap .title_inner {
+	width: 80%;
+	margin: 0 auto;
+	height: 90px;
+	position: relative;
+}
+
+.wrap .title_wrap .title_inner h2 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #222222;
+	padding-top: 30px;
+	position: relative;
+}
+
+.wrap .wrap_content {
+	width: 80%;
+	position: relative;
+	margin: 0 auto;
+}
+
+.wrap .wrap_content .card_info_wrap {
+	width: 79%;
+	position: relative;
+	float: left;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_left {
+	width: 460px;
+	float: left;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_left .card_pic {
+	position: relative;
+	height: 286px;
+	width: 450px;
+	padding-bottom: 8px;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_left .card_pic img {
+	width: 100%;
+	height: 100%;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_right {
+	position: relative;
+	width: 590px;
+	float: right;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_right .card_name_wrap {
+	position: relative;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_right .card_name_wrap h3
+	{
+	font-size: 24px;
+	font-weight: bold;
+	color: #222;
+	border-bottom: 2px solid #333;
+	padding-bottom: 18px;
+	margin-bottom: 40px;
+}
+
+.wrap .wrap_content .card_info_wrap .card_info_right .card_name_wrap p {
+	padding: 18px 12px;
+	background: #f4f4f2;
+	color: #222;
+	font-size: 14px;
+	border-radius: 3px;
+	margin: 0 0 20px 0;
+}
+
+.card_info_wrap_content .card_info_head {
+	height: 59px;
+	line-height: 59px;
+	position: relative;
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.card_info_wrap_content .card_info_head .tt1 {
+	font-size: 18px;
+	color: #222;
+	padding-left: 10px;
+}
+
+.card_info_wrap_content .card_info_head .new_card_btn {
+	position: absolute;
+	right: 0;
+	top: 15px;
+}
+
+.card_info_wrap_content .card_info_head .new_card_btn a {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	text-align: center;
+	padding: 0 10px;
+	background: #006633;
+	color: #fff;
+	font-size: 12px;
+	border-radius: 3px;
+}
+
+.card_info_wrap_content .card_info_head .card_info_content {
+	padding: 17px 13px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+}
+
+.card_info_wrap_content .card_info_head .card_info_content ul li {
+	font-size: 14px;
+	color: #666;
+	line-height: 1.6;
+}
+
+.create_newcard {
+	position: relative;
+	width: 100%;
+}
+
+.create_newcard .newcard_title {
+	height: 40px;
+}
+
+.create_newcard .newcard_title h3 {
+	color: #222;
+	font-size: 18px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.create_newcard .newcard_register {
+	position: relative;
+	width: 100%;
+	border-top: 2px solid #222;
+	border-bottom: 2px solid #222;
+	margin-top: 20px;
+	height: 250px;
+	padding:35px 0;
+}
+
+.create_newcard .newcard_register dl {
+	border-bottom: 1px solid #e0e0e0;
+	height: 60px;
+	line-height: 30px;
+	margin: 0 !important;
+}
+
+.create_newcard .newcard_register dl dt {
+	background: #f4f4f2;
+	color: #222;
+	font-weight: bold;
+	width: 27.096%;
+	float: left;
+	font-size: 14px;
+	padding: 9px 0 9px 2%;
+	height: 100%;
+}
+
+.create_newcard .newcard_register dl dd {
+	float: left;
+	font-size: 14px;
+	padding: 9px 0 9px 2%;
+	color: #ccc;
+	width: 68.904%;
+	margin: 0 !important;
+}
+.create_newcard .newcard_register dl dd #card_name{
+	width: 299px;
+}
+.create_newcard .newcard_register dl dd span{
+	color: #222;
+	font-size: 11px;
+}
+.create_newcard .newcard_register dl dd #card_num1,#card_num2,#card_num3,#card_num4{
+	width: 99px;
+}
+.create_newcard .newcard_register dl dd a{
+	background: #006633;
+    color: #fff; 
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+}
+.create_newcard .newcard_register dl dd label{
+	color: #222;
+}
+
+.register_btn{
+	width: 100%;
+	height: 30px;
+}
+.register_btn a{
+	margin-top:10px;
+	float:right;
+	background: #006633;
+    color: #fff; 
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 2px 20px;
+}
+

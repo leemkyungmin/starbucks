@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace="com.lkm.starbucks.dao.mystarbucksdao">
 	
-	<!-- my/index -->
+	<!-- my/index  start-->
 	<select id="getCardList" resultType="com.lkm.starbucks.dto.user_card_listdto">
 		SELECT * 
 		FROM USER_CARD_LIST
@@ -20,8 +20,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE CLIDX = #{param1}
 	</select>
 	
+	<!-- my/index  end-->
 	
-	<!--  my/reward/my_reward_history -->
+	
+	<!--  my/reward/my_reward_history start-->
 	
 	<select id="reward_history" parameterType="Map" resultType="com.lkm.starbucks.dto.myrewarddto">
 		SELECT mr.*,bi.BNAME
@@ -31,23 +33,80 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         ORDER BY mr.MRDATE DESC
 	</select>
 	
+	<!-- 1_month_reward -->
 	<select id="month_reward" parameterType="Map" resultType="Integer">
 		SELECT NVL(sum(a.mrstar),0)
 		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND (mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND mr.mrstar>0]]>
         group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
+	<!-- all_reward -->
 	<select id="total_reward" parameterType="Map" resultType="Integer">
 		SELECT NVL(sum(a.mrstar),0)
 		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND mr.mrstar>0]]>
         group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
+	<!-- use_reward -->
 	<select id="use_reward" parameterType="Map" resultType="Integer"> 
 		SELECT NVL(sum(a.mrstar)*-1,0)
 		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx}  AND mr.mrstar<0]]>
         group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
+	
+	<!-- model for order_list -->
+	
+	<select id="get_order_info" parameterType="Map" resultType="com.lkm.starbucks.dto.order_listdto">
+		SELECT o.*,bi.BNAME
+		FROM ORDER_LIST o, BRANCH_INFO bi
+		WHERE o.ONUM=#{oNum} AND o.BIDX = bi.BIDX
+	</select>
+	
+	<!--  my/reward/my_reward_history end-->
+	
+	<!-- my/card/new_card start  -->
+	<select id="getcardlist" resultType="com.lkm.starbucks.dto.card_listdto">
+		SELECT * 
+		FROM CARD_LIST
+	</select>
+	
+	<select id="getcardinfo" resultType="com.lkm.starbucks.dto.card_listdto">
+		SELECT *
+		FROM CARD_LIST
+		WHERE CLIDX=#{param1}
+	</select>
+	
+	<update id="update_per_card">
+		UPDATE TABLE USER_CARD_LIST
+		SET UCLREPCARD = 0
+		WHERE UIDX = #{param1}
+	</update>
+	
+	<insert id="insert_card" parameterType="Map">
+		INSERT INTO USER_CARD_LIST(
+			UCLIDX,
+			UCLNAME,
+			UCLCARDNUM,
+			UCLPINNUM,
+			UCLREPCARD,
+			UCLMONEY,
+			UIDX,
+			CLIDX
+		) VALUES(
+			USER_CARD_LIST_SEQ.NEXTVAL,
+			#{cardname},
+			#{cardnum},
+			#{pin_num},
+			#{percard},
+			0,
+			#{uidx},
+			#{clidx}
+		)
+	</insert>
+	
+	<!-- my/card/new_card end  -->
+	
+	
 	
 </mapper>

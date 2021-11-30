@@ -83,7 +83,7 @@ public class mycardcontroller {
 			String pin_num = obj.getString("pin_num");
 			
 			if(percard.equals("1")) {
-				
+				mdao.update_per_card(uidx);
 			}
 			
 			Map<String, Object> params = new HashMap<String, Object>();
@@ -94,14 +94,18 @@ public class mycardcontroller {
 			params.put("clidx", clidx);
 			params.put("pin_num", pin_num);
 			
+			int result = mdao.insert_card(params);
 			
 
-			return "";
+			return result+"";
 		} else {
 			return "sign_in";
 		}
 		
 		
 	}
+	
+	
+	
 
 }

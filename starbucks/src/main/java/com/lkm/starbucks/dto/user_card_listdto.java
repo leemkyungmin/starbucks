@@ -12,14 +12,14 @@ public class user_card_listdto {
 	//uclRepcard 자주 사용 하는 카드 ( 0 > 아님  1 > 자주 사용하는 카드) 
 	
 	int uclIdx,uclMoney,uIdx,clIdx;
-	String uclName,uclCardnum,uclPinnum,uclRepcard,uclCategory;
+	String uclName,uclCardnum,uclPinnum,uclRepcard;
 	
 	
 	public user_card_listdto() {}
 
 
 	public user_card_listdto(int uclIdx, int uclMoney, int uIdx, int clIdx, String uclName, String uclCardnum,
-			String uclPinnum, String uclRepcard, String uclCategory) {
+			String uclPinnum, String uclRepcard) {
 		super();
 		this.uclIdx = uclIdx;
 		this.uclMoney = uclMoney;
@@ -29,7 +29,6 @@ public class user_card_listdto {
 		this.uclCardnum = uclCardnum;
 		this.uclPinnum = uclPinnum;
 		this.uclRepcard = uclRepcard;
-		this.uclCategory = uclCategory;
 	}
 	
 	
