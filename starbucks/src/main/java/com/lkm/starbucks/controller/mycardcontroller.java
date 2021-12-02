@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lkm.starbucks.command.command;
+import com.lkm.starbucks.command.mystarbucks.my_cardlistcommand;
 import com.lkm.starbucks.command.mystarbucks.mystarbucks_indexcommand;
 import com.lkm.starbucks.command.mystarbucks.new_card_viewcommand;
 import com.lkm.starbucks.command.mystarbucks.new_cardcommand;
@@ -105,7 +106,26 @@ public class mycardcontroller {
 		
 	}
 	
-	
+	@RequestMapping(value="my/card/my_card_list",method=RequestMethod.GET)
+	public String my_card_list(HttpServletRequest req ,Model model) {
+		
+		if (req.getSession().getAttribute("udto") == null) {
+
+			String redirect_url = "my/card/my_card_list";
+
+			return "redirect:/login/loginPage?redirect_url=" + redirect_url;
+
+		} else {
+
+			model.addAttribute("req", req);
+			command=  new my_cardlistcommand();
+			command.execute(sqlsession, model);
+			
+
+			return "mystarbucks/card/my_card_list";
+		}
+		
+	}
 	
 
 }

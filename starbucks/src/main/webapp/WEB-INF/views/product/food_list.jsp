@@ -28,9 +28,9 @@
 		
 		$().ready(function(){
 			
-			var type = ${type};
 			
-			if( type = null){
+			
+			if( ${type eq null}){
 				$("input:checkbox[name='chkbox']").prop("checked", true);
 				$("input:checkbox[name='chkboxAll']").prop("checked", true);
 			} else {

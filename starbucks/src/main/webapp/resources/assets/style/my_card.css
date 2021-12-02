@@ -1,0 +1,157 @@
+@charset "UTF-8";
+
+.wrap {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .header_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .header_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .header_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.wrap_content .my_card_wrap {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+
+.my_card_inner {
+	position: relative;
+	width: 100%;
+}
+
+.my_card_inner .title {
+	background: #7e786f;
+	border-radius: 3px 3px 0 0;
+	color: #fffefe;
+	height: 152px;
+	position: relative;
+	text-align: center;
+	width: 100%;
+}
+
+.my_card_inner .title strong {
+	float: left;
+	font-size: 24px;
+	margin-top: 40px;
+	width: 100%;
+}
+
+.my_card_inner .title p {
+	float: left;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 12px;
+	width: 100%;
+}
+
+.my_card_inner .card_list_wrap{
+	width: 100%;
+	position: relative;
+}
+
+.my_card_inner .card_list_wrap .my_card_insert {
+	background: #f6f5ef;
+    border-radius: 0 0 3px 3px;
+    color: #444;
+    height: 305px;
+    text-align: center;
+    width: 100%;
+}
+.my_card_inner .card_list_wrap .my_card_info {
+	width: 100%;
+}
+.my_card_inner .card_list_wrap .my_card_info ul {
+	width: 100%;
+	background: #f6f5ef;
+    border-radius: 0 0 3px 3px;
+    color: #444;
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_list {
+	width: 60%;
+	float: left;
+}
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info{
+	width: 40%;
+	float: left;
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl{
+	padding-top: 100px;
+	margin-bottom: 30px;
+	height: 60px;
+	
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl:after{
+	display: inline-block;
+	content: "";
+	clear: both;
+	
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dt{
+	width: 40%;
+	float: left;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dd{
+	width: 60%;
+	float: left;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn{
+	width: 100%;
+	text-align: center;
+	height: 30px;
+	margin-top: 90px;
+}
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn a{
+	height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px;
+    background: #006633;
+    color: #fff;
+    border-radius: 3px;
+	
+}
+
+
+
+

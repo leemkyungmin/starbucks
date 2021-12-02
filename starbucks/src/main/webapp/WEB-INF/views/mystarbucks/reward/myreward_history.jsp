@@ -69,9 +69,11 @@
 				var month = ${fn:substring(today,5,7)};
 				var day = ${fn:substring(today,8,10)};
 				
+				
+				
 				var date = new Date(year,month,day);
 				date.setFullYear(date.getFullYear() - 1);
-				
+				date.setMonth(date.getMonth()-1);	
 				var begin = date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate();
 				$('#pickDate01').val(begin);
 				$('#pickDate02').val('${today}');

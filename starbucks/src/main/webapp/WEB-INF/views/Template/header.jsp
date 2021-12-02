@@ -17,6 +17,7 @@
   <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 <script src="${url}/resources/assets/js/header.js"></script>
+ <script src="https://js.tosspayments.com/v1"></script>
 <title>StarBucks</title>
 
 <script type="text/javascript">

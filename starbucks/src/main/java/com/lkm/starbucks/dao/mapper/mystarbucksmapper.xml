@@ -7,9 +7,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- my/index  start-->
 	<select id="getCardList" resultType="com.lkm.starbucks.dto.user_card_listdto">
-		SELECT * 
-		FROM USER_CARD_LIST
-		WHERE UIDX = #{param1}
+		SELECT ucl.*,cl.CLIMG 
+		FROM USER_CARD_LIST ucl,CARD_LIST cl
+		WHERE ucl.UIDX = #{param1} AND ucl.CLIDX = cl.CLIDX
 		ORDER BY uclRepcard
 	
 	</select>

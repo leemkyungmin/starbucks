@@ -22,11 +22,12 @@ public class my_cardlistcommand implements command{
 		HttpServletRequest req = (HttpServletRequest) map.get("req");
 		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
 		int uidx =udto.getUIdx();
-		mystarbucksdao mdao  = sqlsession.getMapper(mystarbucksdao.class);
+		mystarbucksdao mdao  = sqlsession.getMapper(mystarbucksdao.class); 
 		
 		ArrayList<user_card_listdto> ucllist = mdao.getCardList(uidx);
 		
 		model.addAttribute("ucllist", ucllist);
+		model.addAttribute("udto", udto);
 		
 	}
 
