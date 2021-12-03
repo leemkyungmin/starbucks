@@ -9,7 +9,7 @@
 	rel="stylesheet">
 <script>
 	$().ready(function(){
-		var tossPayments = TossPayments('test_ck_Z0RnYX2w5322PNvKnZP3NeyqApQE')
+		
 		$('.bxslider').bxSlider({
 			auto : false,
 			autoControls : true,
@@ -105,14 +105,42 @@
 					<option value="100000">100,000</option>
 					<option value="other">직접입력</option>
 				</select>
-				<input type="text" name="money" id="money" value="10000">원 
+				<input type="text" name="money" id="money" value="10000"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">원 
 				<a href="javascript:void(0)" id="chargebtn">충전하기</a>
-				
 			</div>
 			
 		</div>
 	</div>
 </div>
+<script>
+	$().ready(function(){
+		$('#charge_money').change(function(){
+			if($(this).val() == 'other'){
+				$('#money').removeAttr("readonly");
+				$('#money').val('');
+			} else {
+				$('#money').attr("readonly",true); 
+				$('#money').val($(this).val());
+			}
+		});
+		
+		$('#chargebtn').on('click',function(){
+			sessionStorage.setItem("uclidx",$('#uclidx').val());
+			var currentTimeMillis = new Date().getTime()+'${udto.getUNickName()}';
+			var tossPayments = TossPayments('test_ck_Z0RnYX2w5322PNvKnZP3NeyqApQE');
+			 tossPayments.requestPayment('카드', {
+		          amount: $('#money').val(),
+		          orderId: currentTimeMillis,
+		          orderName: '스타벅스 카드 충전',
+		          customerName: '${udto.getUNickName()}',
+		          successUrl: 'http://localhost:9090/${url}/my/card/paysuccess',
+		          failUrl: 'http://localhost:9090/${url}/my/card/fail'
+		        })
+		});
+		
+	});
+</script>
+
 <script
 	src="${url}/resources/bootstrap/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

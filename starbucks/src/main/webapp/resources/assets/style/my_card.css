@@ -151,7 +151,27 @@
     border-radius: 3px;
 	
 }
+.modal-body{
+	color:#222;
+}
+#charge_money,#money{
+	height: 30px;
+}
 
+.modal-body #money{
+	width: 100px;
+	margin : 0 0 10px 0;
+}
+#chargebtn{
+	height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px;
+    background: #006633;
+    color: #fff;
+    border-radius: 3px;
+	
+}
 
 
 

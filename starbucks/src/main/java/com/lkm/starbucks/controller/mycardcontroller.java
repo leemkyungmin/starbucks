@@ -1,8 +1,10 @@
 package com.lkm.starbucks.controller;
 
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lkm.starbucks.command.command;
+import com.lkm.starbucks.command.mystarbucks.my_card_deposit;
 import com.lkm.starbucks.command.mystarbucks.my_cardlistcommand;
 import com.lkm.starbucks.command.mystarbucks.mystarbucks_indexcommand;
 import com.lkm.starbucks.command.mystarbucks.new_card_viewcommand;
@@ -125,6 +128,23 @@ public class mycardcontroller {
 			return "mystarbucks/card/my_card_list";
 		}
 		
+	}
+	
+	@RequestMapping(value="my/card/paysuccess",method=RequestMethod.GET)
+	public String paysuccess(HttpServletRequest req ,Model model) {
+		
+		Enumeration<String> attributes = req.getSession().getAttributeNames();
+		while (attributes.hasMoreElements()) {
+		    String attribute = (String) attributes.nextElement();
+		    System.out.println(attribute+" : "+req.getSession().getAttribute(attribute));
+		}
+		
+		model.addAttribute("req",req);
+		
+		command = new my_card_deposit();
+		command.execute(sqlsession, model);
+		
+		return "mystarbucks/card/paysuccess";
 	}
 	
 
