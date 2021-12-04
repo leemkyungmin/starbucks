@@ -24,7 +24,7 @@ public class noticecommand implements command {
 		
 		int page = (req.getParameter("page") ==null ? 1 : Integer.parseInt(req.getParameter("page"))  );
 		
-		int pageCount =5;  //한페이지에 보여줄 게시물 갯수 
+		int pageCount =10;  //한페이지에 보여줄 게시물 갯수 
 		int beginRecord = (page - 1) * pageCount + 1;
 		int endRecord = pageCount * page;
 		

@@ -15,9 +15,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lkm.starbucks.command.command;
-import com.lkm.starbucks.command.mystarbucks.my_card_deposit;
+import com.lkm.starbucks.command.mystarbucks.my_card_deposit_resultcommand;
+import com.lkm.starbucks.command.mystarbucks.my_card_depositcommand;
+import com.lkm.starbucks.command.mystarbucks.my_card_historycommand;
 import com.lkm.starbucks.command.mystarbucks.my_cardlistcommand;
 import com.lkm.starbucks.command.mystarbucks.mystarbucks_indexcommand;
 import com.lkm.starbucks.command.mystarbucks.new_card_viewcommand;
@@ -129,23 +132,47 @@ public class mycardcontroller {
 		}
 		
 	}
-	
+	/*
+	 * 페이지 새로고침시
+	 * 중복으로 카드 금액 올라가지 않도록
+	 * 업데이트후 redirect
+	 * 
+	 */
 	@RequestMapping(value="my/card/paysuccess",method=RequestMethod.GET)
-	public String paysuccess(HttpServletRequest req ,Model model) {
-		
-		Enumeration<String> attributes = req.getSession().getAttributeNames();
-		while (attributes.hasMoreElements()) {
-		    String attribute = (String) attributes.nextElement();
-		    System.out.println(attribute+" : "+req.getSession().getAttribute(attribute));
-		}
+	public String paysuccess(HttpServletRequest req ,Model model,RedirectAttributes ra) {
 		
 		model.addAttribute("req",req);
+		ra.addAttribute("uclidx",req.getParameter("uclidx"));
+		ra.addAttribute("amount",req.getParameter("amount"));
 		
-		command = new my_card_deposit();
+		command = new my_card_depositcommand();
 		command.execute(sqlsession, model);
+		
+		return "redirect:/my/card/payresult";
+	}
+	@RequestMapping(value="my/card/payresult",method=RequestMethod.GET)
+	public String payresult(HttpServletRequest req ,Model model) {
+		
+		model.addAttribute("req",req);
+		command=new my_card_deposit_resultcommand();
+		command.execute(sqlsession, model);
+		
 		
 		return "mystarbucks/card/paysuccess";
 	}
 	
+	/*
+	 * 카드 충전 및 사용 내역 
+	 * 
+	 */
+	@RequestMapping(value="my/card/card_history",method=RequestMethod.POST)
+	public String card_history(HttpServletRequest req,Model model) {
+		model.addAttribute("req",req);
+		
+		command =new my_card_historycommand();
+		command.execute(sqlsession, model);
+		
+		return "mystarbucks/card/my_card_history_ajax";
+	}
 
 }

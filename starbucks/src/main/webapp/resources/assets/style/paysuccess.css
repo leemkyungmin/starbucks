@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+.wrap {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .header_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .header_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .header_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+.wrap_content .pay_success_wrap {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+.pay_result_wrap{
+	position: relative;
+	width: 100%;
+}
+.pay_result_wrap .result_title{
+	width: 100%;
+	height: 60px;
+	margin-bottom: 40px;
+}
+.pay_result_wrap .result_title h2{
+	font-size: 25px;
+	height: 60px;
+	line-height: 60px;
+	color: #222;
+}
+.pay_result_wrap .pay_result_wrap .result_content{
+	width: 100%;
+	position: relative;
+}
+.pay_result_wrap .result_content dl{
+	width: 100%;
+	border-top:1px solid black;
+}
+.pay_result_wrap .result_content dl dt{
+	height: 40px;
+	width: 40%;
+	float: left;
+	text-align: center;
+	background: #ddd;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+
+
+.pay_result_wrap .result_content dl dd{
+	height: 40px;
+	width: 60%;
+	float: left;
+	text-align: center;
+	border-bottom: 1px solid black;
+	line-height: 40px;
+}
+.pay_success_wrap .my_card_btn {
+	width: 100%;
+	height: 30px;
+}
+
+.pay_success_wrap .my_card_btn a {
+	margin-top:30px;
+	height: 20px;
+    line-height: 20px;
+    text-align: center;
+    padding: 5px 15px;
+    background: #006633;
+    color: #fff;
+    border-radius: 3px;
+    float:right;
+}
+
+

@@ -21,9 +21,40 @@
 		
 		$(document).on('click','#money_charge',function(){
 			var uclidx = $(this).parent().parent().parent().data('target');
+			$('#uclidx').val(uclidx);
 			$('#MyModal').modal('show');
 		});
 		
+		$(document).on('click','#card_historybn',function(){
+			var uclidx = $(this).parent().parent().parent().data('target');
+			card_history_ajax(uclidx,1);
+			$('#card_history').modal('show');
+		});
+		
+		
+		function card_history_ajax(uclidx,page){
+			var obj = new Object();
+			obj.uclidx=uclidx;
+			obj.page =page;
+			var data = JSON.stringify(obj);
+			$.ajax({
+				url:'${url}/my/card/card_history',
+				data:{
+                    data:data
+            	},
+            	method:'post',
+				success:function(e){
+					console.log(e);
+					$('#card_history .modal-body tbody').remove();
+					$('#card_history .modal-body tfoot').remove();
+					$('#card_history .modal-body table').append(e);
+				},error:function(request, status, error){
+					console.log('ajax통신 실패');
+					console.log("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+				}
+				
+			});
+		}
 	});
 </script>
 
@@ -62,6 +93,7 @@
 											</dl>
 											<div class="user_card_btn">
 												<a href="javascript:void(0)" id="money_charge">카드 충전</a>
+												<a href="javascript:void(0)" id="card_historybn">카드 내역</a>
 												<a href="javascript:void(0)" id="card_delete">카드 삭제</a>
 											</div>
 											
@@ -112,6 +144,36 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal" id="card_history" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">카드 내역</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<table class="history_record">
+					<thead>
+						<tr>
+							<th>날짜</th>
+							<th>충전/사용</th>
+							<th>금액</th>
+						</tr>
+					</thead>
+					
+				</table>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+
 <script>
 	$().ready(function(){
 		$('#charge_money').change(function(){
@@ -125,6 +187,7 @@
 		});
 		
 		$('#chargebtn').on('click',function(){
+			var uclidx=$('#uclidx').val();
 			sessionStorage.setItem("uclidx",$('#uclidx').val());
 			var currentTimeMillis = new Date().getTime()+'${udto.getUNickName()}';
 			var tossPayments = TossPayments('test_ck_Z0RnYX2w5322PNvKnZP3NeyqApQE');
@@ -133,8 +196,8 @@
 		          orderId: currentTimeMillis,
 		          orderName: '스타벅스 카드 충전',
 		          customerName: '${udto.getUNickName()}',
-		          successUrl: 'http://localhost:9090/${url}/my/card/paysuccess',
-		          failUrl: 'http://localhost:9090/${url}/my/card/fail'
+		          successUrl: 'http://localhost:9090/${url}/my/card/paysuccess?uclidx='+uclidx+'&uidx='+${udto.getUIdx()},
+		          failUrl: 'http://localhost:9090/${url}/my/card/my_card_list'
 		        })
 		});
 		
@@ -150,11 +213,5 @@
 
 <!-- Custom scripts for all pages-->
 <script src="${url}/resources/bootstrap/js/sb-admin-2.min.js"></script>
-
-<!-- Page level plugins -->
-<script
-	src="${url}/resources/bootstrap/vendor/datatables/jquery.dataTables.min.js"></script>
-<script
-	src="${url}/resources/bootstrap/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <%@ include file="/WEB-INF/views/Template/fotter.jsp"%>

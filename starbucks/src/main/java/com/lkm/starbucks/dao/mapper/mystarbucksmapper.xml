@@ -107,6 +107,48 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- my/card/new_card end  -->
 	
+	<!--  my/card/my_card_list payment -->
+	<update id="update_my_card_deposit" parameterType="Map">
+		UPDATE USER_CARD_LIST
+		SET	UCLMONEY =UCLMONEY+#{amount}
+		WHERE UCLIDX = #{uclidx}
+	</update>
+	<insert id="insert_my_card_deposit" parameterType="Map">
+		INSERT INTO user_card_deposit(
+			UCDIDX,
+			UCDDATE,
+			UCDTYPE,
+			UCDDEPOSIT,
+			UIDX,
+			UCLIDX
+		) VALUES(
+			USER_CARD_DEPOSIT_SEQ.NEXTVAL,
+			SYSDATE,
+			#{type},
+			#{amount},
+			#{uidx},
+			#{uclidx}
+		)
+	</insert>
 	
+	<select id="user_card_info" resultType="com.lkm.starbucks.dto.user_card_listdto">
+		SELECT * 
+		FROM USER_CARD_LIST
+		WHERE UCLIDX=#{param1}
+	</select>
+	
+	<!-- 카드 내역 리스트 -->
+	
+	<select id="getDepositList" parameterType="Map" resultType="com.lkm.starbucks.dto.user_card_depositdto">
+		SELECT a.*
+		FROM (SELECT ROWNUM rn,ucd.* FROM USER_CARD_DEPOSIT ucd WHERE UCLIDX=#{uclidx} ORDER BY UCDIDX DESC) a
+		WHERE rn BETWEEN #{beginRecord} and #{endRecord}
+	</select>
+	
+	<select id="deposit_totalcount" parameterType="Map" resultType="Integer">
+		SELECT COUNT(*)
+		FROM USER_CARD_DEPOSIT
+		WHERE UCLIDX=#{uclidx}
+	</select>
 	
 </mapper>

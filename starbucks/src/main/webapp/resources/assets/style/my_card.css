@@ -151,6 +151,9 @@
     border-radius: 3px;
 	
 }
+#MyModal{
+	top:500px !important;
+}
 .modal-body{
 	color:#222;
 }
@@ -170,7 +173,9 @@
     background: #006633;
     color: #fff;
     border-radius: 3px;
-	
+}
+#card_history .modal-dialog{
+	max-width: 900px !important;
 }
 
 
