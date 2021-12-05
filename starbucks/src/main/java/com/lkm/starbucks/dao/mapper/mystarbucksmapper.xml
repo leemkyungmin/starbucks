@@ -10,8 +10,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT ucl.*,cl.CLIMG 
 		FROM USER_CARD_LIST ucl,CARD_LIST cl
 		WHERE ucl.UIDX = #{param1} AND ucl.CLIDX = cl.CLIDX
-		ORDER BY uclRepcard
-	
+		ORDER BY uclRepcard DESC
+		
 	</select>
 	
 	<select id="getCardinfo" resultType="com.lkm.starbucks.dto.card_listdto">
@@ -151,4 +151,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE UCLIDX=#{uclidx}
 	</select>
 	
+	
+	<!-- 1. 카드 내역 삭제 -->
+	<delete id="drop_card_deposit" parameterType="Map">
+		DELETE FROM USER_CARD_DEPOSIT
+		WHERE UCLIDX =#{uclidx} AND UIDX=#{uidx}
+	</delete>
+	<!-- 2.카드 삭제 -->
+	<delete id="drop_card" parameterType="Map">
+		DELETE FROM USER_CARD_LIST
+		WHERE UCLIDX =#{uclidx} AND UCLPINNUM=#{pinNum} AND UIDX=#{uidx}
+	</delete>	
 </mapper>

@@ -174,5 +174,47 @@ public class mycardcontroller {
 		
 		return "mystarbucks/card/my_card_history_ajax";
 	}
+	
+	/*
+	 * 카드삭제
+	 * 
+	 * 
+	 */
+	@RequestMapping(value="my/card/drop_card",method=RequestMethod.POST)
+	@ResponseBody
+	public String drop_card(HttpServletRequest req,Model model) {
+		
+		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
+		
+		if(udto ==null) {
+			return "login_check";
+		} else {
+			
+			String jsonData = req.getParameter("data");
+			JSONObject obj = new JSONObject(jsonData);
+			String uclidx =obj.getString("uclidx");
+			String pinNum =obj.getString("pinNum");
+			
+			
+			
+			Map<String,Object> param = new HashMap<String, Object>();
+			param.put("uclidx",uclidx);
+			param.put("pinNum", pinNum);
+			param.put("uidx",udto.getUIdx());
+			
+			mystarbucksdao mdao =sqlsession.getMapper(mystarbucksdao.class);
+			int a=mdao.drop_card_deposit(param);
+			int result =mdao.drop_card(param);
+			
+			
+			
+			if(result>0) {
+				return "sucess";
+			} else {
+				return "false";
+			}
+		}
+		
+	}
 
 }

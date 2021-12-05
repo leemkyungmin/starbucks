@@ -80,103 +80,177 @@
 	width: 100%;
 }
 
-.my_card_inner .card_list_wrap{
+.my_card_inner .card_list_wrap {
 	width: 100%;
 	position: relative;
 }
 
 .my_card_inner .card_list_wrap .my_card_insert {
 	background: #f6f5ef;
-    border-radius: 0 0 3px 3px;
-    color: #444;
-    height: 305px;
-    text-align: center;
-    width: 100%;
+	border-radius: 0 0 3px 3px;
+	color: #444;
+	height: 305px;
+	text-align: center;
+	width: 100%;
 }
+
 .my_card_inner .card_list_wrap .my_card_info {
 	width: 100%;
 }
+
 .my_card_inner .card_list_wrap .my_card_info ul {
 	width: 100%;
 	background: #f6f5ef;
-    border-radius: 0 0 3px 3px;
-    color: #444;
+	border-radius: 0 0 3px 3px;
+	color: #444;
 }
+
 .my_card_inner .card_list_wrap .my_card_info ul .user_card_list {
 	width: 60%;
 	float: left;
 }
 
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info{
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info {
 	width: 40%;
 	float: left;
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl {
 	padding-top: 100px;
 	margin-bottom: 30px;
 	height: 60px;
-	
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl:after{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl:after
+	{
 	display: inline-block;
 	content: "";
 	clear: both;
-	
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dt{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dt {
 	width: 40%;
 	float: left;
 	text-align: center;
 	margin-bottom: 10px;
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dd{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info dl dd {
 	width: 60%;
 	float: left;
 	text-align: center;
 	margin-bottom: 10px;
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn
+	{
 	width: 100%;
 	text-align: center;
 	height: 30px;
 	margin-top: 90px;
 }
-.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn a{
+
+.my_card_inner .card_list_wrap .my_card_info ul .user_card_info .user_card_btn a
+	{
 	height: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 5px;
-    background: #006633;
-    color: #fff;
-    border-radius: 3px;
-	
+	line-height: 20px;
+	text-align: center;
+	padding: 5px;
+	background: #006633;
+	color: #fff;
+	border-radius: 3px;
 }
-#MyModal{
-	top:500px !important;
+
+#MyModal {
+	top: 500px !important;
 }
-.modal-body{
-	color:#222;
+
+.modal-body {
+	color: #222;
 }
-#charge_money,#money{
+
+#charge_money, #money {
 	height: 30px;
 }
 
-.modal-body #money{
+.modal-body #money {
 	width: 100px;
-	margin : 0 0 10px 0;
+	margin: 0 0 10px 0;
 }
-#chargebtn{
+
+#chargebtn ,#delete_cardBtn{
 	height: 20px;
-    line-height: 20px;
-    text-align: center;
-    padding: 5px;
-    background: #006633;
-    color: #fff;
-    border-radius: 3px;
+	line-height: 20px;
+	text-align: center;
+	padding: 5px;
+	background: #006633;
+	color: #fff;
+	border-radius: 3px;
 }
-#card_history .modal-dialog{
-	max-width: 900px !important;
+
+#card_history .modal-dialog {
+	max-width: 700px !important;
+}
+
+#card_history table thead tr {
+	border-bottom: 1px solid #222;
+	background: #ddd;
+}
+.bx-controls-direction a.bx-prev {
+    background: url(../images/commom/arrow_Prev.png) no-repeat;
+    display: block;
+    left: -46px;
+    height: 42px;
+}
+.bx-controls-direction a.bx-next {
+    background: url(../images/commom/arrow_Next.png) no-repeat;
+    display: block;
+    right: -46px;
+    height: 42px;
+}
+.bx-controls-direction a.bx-next:hover,.bx-controls-direction a.bx-Prev:hover {
+    background-position: 0;
 }
 
 
+#card_history table th, td {
+	text-align: center;
+}
+
+#card_history table tbody tr {
+	height: 30px;
+	line-height: 30px;
+}
+
+#card_history table tbody tr td {
+	font-size: 18px;
+}
+
+#card_history table tfoot tr td .card_history_pager {
+	float: right;
+	margin-right: 40px;
+}
+
+#card_history table tfoot tr td .card_history_pager ul #pager_controll {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+
+#card_history table tfoot tr td .card_history_pager ul .active a {
+	font-weight: bold;
+	color: #0d5f34;
+	border-bottom: 1px solid #0d5f34;
+	text-decoration: none;
+}
+
+#card_history table tfoot tr td .card_history_pager ul #pager_controll a{
+	font-size: 14px;
+	color: #555555;
+	text-decoration: none;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    z-index: 1000 !important;
+}
 

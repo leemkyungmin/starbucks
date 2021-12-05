@@ -49,4 +49,12 @@ public interface mystarbucksdao {
 	
 	public int deposit_totalcount(Map<String,Object> param);
 	
+	/*
+	 * 카드 삭제
+	 */
+	
+	public int drop_card_deposit(Map<String,Object> param);
+	
+	public int drop_card(Map<String,Object> param);
+	
 }

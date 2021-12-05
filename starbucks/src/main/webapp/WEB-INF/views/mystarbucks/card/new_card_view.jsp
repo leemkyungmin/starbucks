@@ -60,7 +60,7 @@
 							location.href='/login/loginPage?redirect_url=my/card/new_card';
 						} else if( data =='1'){
 							alert('카드 등록성공');
-							location.href="/my/card/my_card_list";
+							location.href="${url}/my/card/my_card_list";
 						} 
 						
 					},

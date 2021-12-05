@@ -48,7 +48,7 @@ public class my_card_historycommand implements command {
 		
 		model.addAttribute("ucdlist", ucdlist);
 		
-		String pager =PageMaker.getPageView2("",page, pageCount, totalPage);
+		String pager =PageMaker.getPageView(uclidx,page, pageCount, totalPage);
 		
 		model.addAttribute("pager",pager);
 	}
