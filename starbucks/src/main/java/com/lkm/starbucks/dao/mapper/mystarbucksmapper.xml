@@ -161,5 +161,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="drop_card" parameterType="Map">
 		DELETE FROM USER_CARD_LIST
 		WHERE UCLIDX =#{uclidx} AND UCLPINNUM=#{pinNum} AND UIDX=#{uidx}
-	</delete>	
+	</delete>
+	
+	<!-- myMenu -->
+	<select id="getmycart" resultType="com.lkm.starbucks.dto.mycartdto">
+		SELECT *
+		FROM MYCART
+		WHERE UIDX=#{uidx} AND MCTYPE=#{type}
+	</select>
+		
 </mapper>

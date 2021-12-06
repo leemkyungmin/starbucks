@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+input{
+	margin: 0;
+	paddin :0;
+	
+}
+
+.wrap {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .header_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .header_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .header_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.wrap_content .myMenu_wrap {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+
+.wrap_content .myMenu_wrap dl {
+	position: relative;
+	padding-top: 40px;
+}
+
+.wrap_content .myMenu_wrap dl .tab {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 5;
+}
+
+.wrap_content .myMenu_wrap dl .drink_tab {
+	left: 0;
+	margin-left: 0
+}
+
+.wrap_content .myMenu_wrap dl .food_tab {
+	left: 50%;
+	margin-left: -138px;
+}
+
+.wrap_content .myMenu_wrap dl .product_tab {
+	left: 50%;
+	margin-left: 138px;
+}
+
+.wrap_content .myMenu_wrap dl dt h4 a {
+	width: 299px;
+	box-sizing: border-box;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	line-height: 38px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	color: #444;
+	background: #fff;
+	border-top: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+}
+
+.wrap_content .myMenu_wrap dl dt.on h4 a {
+	box-sizing: border-box;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	background: #006633;
+	color: #fff;
+	border: 0;
+}
+
+.wrap_content .myMenu_wrap dl dd {
+	position: relative;
+	margin-top: 40px;
+}
+
+.wrap_content .myMenu_wrap dl dd article {
+	display: none;
+	border-top: 1px solid #666;
+}
+
+.wrap_content .myMenu_wrap dl dd article table {
+	border-top: 1px solid #333;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.wrap_content .myMenu_wrap dl dd article table thead tr th {
+	border-bottom: 1px solid #333;
+	color: #222;
+	height: 46px;
+	vertical-align: middle;
+}
+.ez-checkbox{
+	zoom:1;
+	background: transparent url(../images/commom/mymenu/ck_icon.jpg) 0 0 no-repeat;
+    display: inline-block;
+
+}
+.ez-checked{
+	background: transparent url(../images/commom/mymenu/ck_icon_on.jpg) 0 0 no-repeat;
+    display: inline-block;
+}
+.wrap_content .myMenu_wrap dl dd article table thead tr th .ez-checkbox input[type="checkbox"] {
+	width:12px;
+	height: 12px;
+	margin:0;
+	padding:0;
+}
+.ez-hide{
+	opacity: 0;
+}
+table tbody tr td{
+	height: 46px;
+	border-bottom: 1px solid #666;
+	color: #222;
+	vertical-align: middle;
+}
+.odd{
+	background:#ddd;
+}

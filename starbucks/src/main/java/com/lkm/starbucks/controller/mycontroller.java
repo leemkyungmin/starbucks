@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +18,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.command.mystarbucks.my_reward_historycommand;
+import com.lkm.starbucks.command.mystarbucks.mymenucommand;
 import com.lkm.starbucks.command.mystarbucks.mystarbucks_indexcommand;
+import com.lkm.starbucks.command.mystarbucks.new_cardcommand;
 import com.lkm.starbucks.dao.mystarbucksdao;
+import com.lkm.starbucks.dto.mycartdto;
 import com.lkm.starbucks.dto.myrewarddto;
 import com.lkm.starbucks.dto.order_listdto;
 import com.lkm.starbucks.dto.usersdto;
@@ -125,4 +129,45 @@ public class mycontroller {
 		
 	}
 
+	/*
+	 * MYCART
+	 * 
+	 */
+	
+	@RequestMapping(value="my/menu/mymenu",method=RequestMethod.GET)
+	public String mymenu(HttpServletRequest req,Model model) {
+		
+		if (req.getSession().getAttribute("udto") == null) {
+
+			String redirect_url = "my/menu/mymenu";
+
+			return "redirect:/login/loginPage?redirect_url=" + redirect_url;
+
+		} else {
+			model.addAttribute("req",req);
+			command =new mymenucommand();
+			command.execute(sqlsession, model);
+
+			return "mystarbucks/menu/mymenu";
+		}
+	}
+	
+	@RequestMapping(value="my/menu/myMenu_ajax",method=RequestMethod.POST)
+	@ResponseBody
+	public ArrayList<mycartdto> getMenu_ajax(HttpServletRequest req,Model model) {
+		
+		mystarbucksdao mdao =sqlsession.getMapper(mystarbucksdao.class);
+		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
+		String type =req.getParameter("type");
+		
+		Map<String,Object> param = new HashMap<String, Object>();
+		param.put("uidx",udto.getUIdx());
+		param.put("type",type);
+		
+		ArrayList<mycartdto> mclist = mdao.getmycart(param);
+		
+		return mclist;
+		
+	}
+	
 }
