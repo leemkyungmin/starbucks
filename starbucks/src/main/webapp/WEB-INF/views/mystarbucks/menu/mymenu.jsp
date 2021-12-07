@@ -462,7 +462,7 @@
 										</dt>
 										<dd>
 											<div class="card_info_inner">
-												<dl> 
+												<dl>  
 													<dt>카드이름</dt>
 													<dd>${ucllist.getUclName() }</dd>
 													<dt>카드 잔액</dt>
