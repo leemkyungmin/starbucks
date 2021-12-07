@@ -462,11 +462,11 @@
 										</dt>
 										<dd>
 											<div class="card_info_inner">
-												<dl>
+												<dl> 
 													<dt>카드이름</dt>
 													<dd>${ucllist.getUclName() }</dd>
 													<dt>카드 잔액</dt>
-													<dd><fmt:formatNumber value="${ucllist.getUclMoney() }" pattern="#,###"/>원</dd>
+										 			<dd><fmt:formatNumber value="${ucllist.getUclMoney() }" pattern="#,###"/>원</dd>
 												</dl>	
 											</div>
 											<div class="card_pin_form">

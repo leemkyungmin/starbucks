@@ -16,7 +16,7 @@ public interface mystarbucksdao {
 	public ArrayList<user_card_listdto> getCardList(int uidx);
 	public card_listdto getCardinfo(int clidx);
 	
-	//my/reward/my_reward_history
+	//my/reward/my_reward_history 
 	
 	public ArrayList<myrewarddto> reward_history(Map<String,Object> params);
 	

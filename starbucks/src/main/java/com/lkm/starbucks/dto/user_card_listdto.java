@@ -8,7 +8,7 @@ import lombok.Setter;
 public class user_card_listdto {
 	
 	
-	//uclPinnum 핀번호
+	//uclPinnum 핀번호 
 	//uclRepcard 자주 사용 하는 카드 ( 0 > 아님  1 > 자주 사용하는 카드) 
 	
 	int uclIdx,uclMoney,uIdx,clIdx;

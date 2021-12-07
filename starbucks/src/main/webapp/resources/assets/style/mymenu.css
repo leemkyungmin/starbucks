@@ -278,7 +278,7 @@ table tbody td input[type="text"] {
 	display: inline-block;
 	text-align: center;
 }
-.card_info_inner dl{
+.card_info_inner dl{ 
 	margin-top: 30px;
 }
 .card_pin_form{

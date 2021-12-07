@@ -24,7 +24,7 @@ public class mymenucommand implements command {
 		HttpServletRequest req =(HttpServletRequest) map.get("req");
 		
 		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
-		int uidx =udto.getUIdx();
+		int uidx =udto.getUIdx(); 
 		
 		Map<String,Object> param = new HashMap<String, Object>();
 		param.put("uidx",udto.getUIdx());

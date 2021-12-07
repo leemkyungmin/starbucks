@@ -179,7 +179,7 @@ public class mycontroller {
 	public String getMyCard(HttpServletRequest req,Model model) {
 		
 		JSONArray jrr =new JSONArray();
-		
+		 
 		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
 		mystarbucksdao mdao =sqlsession.getMapper(mystarbucksdao.class);
 		if(udto ==null) {

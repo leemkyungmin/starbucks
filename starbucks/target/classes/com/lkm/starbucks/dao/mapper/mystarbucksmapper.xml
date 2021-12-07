@@ -157,7 +157,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM USER_CARD_DEPOSIT
 		WHERE UCLIDX =#{uclidx} AND UIDX=#{uidx}
 	</delete>
-	<!-- 2.카드 삭제 -->
+	<!-- 2.카드 삭제 --> 
 	<delete id="drop_card" parameterType="Map">
 		DELETE FROM USER_CARD_LIST
 		WHERE UCLIDX =#{uclidx} AND UCLPINNUM=#{pinNum} AND UIDX=#{uidx}
