@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.json.simple.JSONAware;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,6 +27,8 @@ import com.lkm.starbucks.dao.mystarbucksdao;
 import com.lkm.starbucks.dto.mycartdto;
 import com.lkm.starbucks.dto.myrewarddto;
 import com.lkm.starbucks.dto.order_listdto;
+import com.lkm.starbucks.dto.user_card_depositdto;
+import com.lkm.starbucks.dto.user_card_listdto;
 import com.lkm.starbucks.dto.usersdto;
 
 @Controller
@@ -169,5 +173,37 @@ public class mycontroller {
 		return mclist;
 		
 	}
+	
+	@RequestMapping(value="my/menu/mycard_list",method=RequestMethod.POST,produces = "text/json; charset=UTF-8")
+	@ResponseBody
+	public String getMyCard(HttpServletRequest req,Model model) {
+		
+		JSONArray jrr =new JSONArray();
+		
+		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
+		mystarbucksdao mdao =sqlsession.getMapper(mystarbucksdao.class);
+		if(udto ==null) {
+			return "login_check";
+		} else {
+			ArrayList<user_card_listdto> ucllist =mdao.getCardList(udto.getUIdx()) ;
+			
+			if(ucllist.size() ==0) {
+				return "register_card";
+			} else {
+				for(int i=0; i<ucllist.size(); i++) {
+					org.json.simple.JSONObject obj = new org.json.simple.JSONObject();
+					obj.put("uclidx",ucllist.get(i).getUclIdx());
+					obj.put("uclname", ucllist.get(i).getUclName());
+					obj.put("uclMoney", ucllist.get(i).getUclMoney());
+					obj.put("climg",ucllist.get(i).getClImg());
+					jrr.put(obj);
+				}
+			}
+			
+			return jrr.toString();
+		}
+		
+	}
+	
 	
 }

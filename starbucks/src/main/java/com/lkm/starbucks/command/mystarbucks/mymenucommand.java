@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.dao.mystarbucksdao;
 import com.lkm.starbucks.dto.mycartdto;
+import com.lkm.starbucks.dto.user_card_listdto;
 import com.lkm.starbucks.dto.usersdto;
 
 public class mymenucommand implements command {
@@ -32,9 +33,11 @@ public class mymenucommand implements command {
 		
 		mystarbucksdao mdao =sqlsession.getMapper(mystarbucksdao.class);
 		ArrayList<mycartdto> mclist = mdao.getmycart(param);
+		ArrayList<user_card_listdto> ucllist =mdao.getCardList(uidx) ;
 		
 		
 		model.addAttribute("mclist", mclist);
+		model.addAttribute("ucllist", ucllist);
 
 		
 		

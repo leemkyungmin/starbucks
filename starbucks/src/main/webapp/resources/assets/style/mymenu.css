@@ -1,9 +1,8 @@
 @charset "UTF-8";
 
-input{
+input {
 	margin: 0;
-	paddin :0;
-	
+	paddin: 0;
 }
 
 .wrap {
@@ -48,6 +47,7 @@ input{
 	width: 70%;
 	margin: 0 auto;
 	margin-top: 50px;
+	overflow: hidden;
 }
 
 .wrap_content .myMenu_wrap {
@@ -137,31 +137,160 @@ input{
 	height: 46px;
 	vertical-align: middle;
 }
-.ez-checkbox{
-	zoom:1;
-	background: transparent url(../images/commom/mymenu/ck_icon.jpg) 0 0 no-repeat;
-    display: inline-block;
 
+.ez-checkbox {
+	zoom: 1;
+	background: transparent url(../images/commom/mymenu/ck_icon.jpg) 0 0
+		no-repeat;
+	display: inline-block;
 }
-.ez-checked{
-	background: transparent url(../images/commom/mymenu/ck_icon_on.jpg) 0 0 no-repeat;
-    display: inline-block;
+
+.ez-checked {
+	background: transparent url(../images/commom/mymenu/ck_icon_on.jpg) 0 0
+		no-repeat;
+	display: inline-block;
 }
-.wrap_content .myMenu_wrap dl dd article table thead tr th .ez-checkbox input[type="checkbox"] {
-	width:12px;
+
+.wrap_content .myMenu_wrap dl dd article table thead tr th .ez-checkbox input[type="checkbox"]
+	{
+	width: 12px;
 	height: 12px;
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
-.ez-hide{
+
+.ez-hide {
 	opacity: 0;
 }
-table tbody tr td{
+
+table tbody tr td {
 	height: 46px;
 	border-bottom: 1px solid #666;
 	color: #222;
 	vertical-align: middle;
 }
-.odd{
-	background:#ddd;
+
+.odd {
+	background: #ddd;
+}
+
+.myMenu_btns {
+	position: relative;
+	width: 100%;
+}
+
+.myMenu_btns ul li {
+	float: left;
+	border: 1px solid #cccccc;
+	background: #fcfcfc;
+	border-radius: 3px;
+	width: 80px;
+	text-align: center;
+	margin-left: 5px;
+}
+
+.myMenu_btns ul li a {
+	color: #444;
+	display: block;
+	font-size: 12px;
+	font-weight: bold;
+	height: 21px;
+	line-height: 21px;
+	text-align: center;
+	width: 100%;
+}
+
+.myMenu_btns ul li:last-child {
+	float: right;
+	background: #006633;
+}
+
+.myMenu_btns ul li:last-child a {
+	color: #fff;
+}
+
+table tbody td input[type="text"] {
+	width: 50px;
+	text-align: center;
+}
+
+#MyModal {
+	color: #222 !important;
+}
+
+#MyModal .modal-dialog {
+	max-width: 1000px !important;
+}
+
+#MyModal .order_wrap {
+	width: 50%;
+	float: left;
+}
+
+#MyModal .card_wrap {
+	width: 50%;
+	float: right;
+	position: relative;
+}
+
+#MyModal table {
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#MyModal table tbody {
+	font-size: 14px;
+}
+
+#MyModal table tfoot {
+	background: #ddd;
+}
+
+#MyModal table tfoot td:last-child {
+	text-align: right;
+	padding-right: 20px;
+}
+
+#MyModal .card_wrap .card_info {
+	width: 100%;
+	position: relative;
+}
+
+.card_pin_form a {
+	font-size: 12px;
+	background: #006633;
+	font-weight: bold;
+	height:24px;
+	line-height:24px;
+	text-align: center;
+	padding: 5px;
+	color: #fff;
+}
+
+.card_info dl dd dl dt{
+	float:left;
+	width: 50%;
+	display: inline-block;
+	text-align: center;
+}
+.card_info dl dd dl dd{
+	width: 50%;
+	display: inline-block;
+	text-align: center;
+}
+.card_info_inner dl{
+	margin-top: 30px;
+}
+.card_pin_form{
+	padding-left: 77px;
+}
+.card_pin_form a:hover{
+	font-size: 12px;
+	background: #006633;
+	font-weight: bold;
+	height:24px;
+	line-height:24px;
+	text-align: center;
+	padding: 5px;
+	color: #fff;
 }

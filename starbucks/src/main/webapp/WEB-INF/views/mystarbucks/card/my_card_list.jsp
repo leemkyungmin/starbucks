@@ -16,7 +16,8 @@
 			pager : false,
 			slideWidth : 899,
 			slideWidth :899,
-			touchEnabled : (navigator.maxTouchPoints > 0)
+			touchEnabled : (navigator.maxTouchPoints > 0),
+			infiniteLoop: false
 		});
 		
 		$(document).on('click','#money_charge',function(){
