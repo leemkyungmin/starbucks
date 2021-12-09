@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../Template/header.jsp"%>
 <link rel="stylesheet" href="${url}/resources/assets/style/coffee_product_view.css">
@@ -12,6 +12,17 @@
 			lensFadeIn: 100,
 			lensFadeOut: 100
 		});
+		
+		$('.myDrink a').on('click',function(){
+			var name ='${ck.getCkName()}';
+			var type='PRODUCT';
+			var price ='${ck.getCkPrice()}';
+			var idx ='${ck.getCkIdx()}';
+			
+			insert_myMenu(name,type,price,idx,'coffee/coffee_list');
+			
+		});
+		
 	});
 </script>
 <div class="wrap">

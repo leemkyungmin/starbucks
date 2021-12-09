@@ -31,5 +31,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE ck.CKIDX=#{param1} AND ck.CKTIDX = ckt.CKTIDX
 	</select>
 	
+	<insert id="insert_menu" parameterType="Map">
+		INSERT INTO MYCART(
+			MCIDX,
+			MCTYPE, 
+			MCNAME,
+			MCPRICE,
+			MCCOUNT,
+			MCDATE,
+			UIDX,
+			TARGETIDX
+		) VALUES(
+			MYCART_SEQ.NEXTVAL,
+			'${type}',
+			'${name}',
+			${price},
+			${count},
+			SYSDATE,
+			${uidx},
+			${idx}
+		)
+	</insert>
 	
 </mapper>

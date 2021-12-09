@@ -20,6 +20,37 @@
  <script src="https://js.tosspayments.com/v1"></script>
 <title>StarBucks</title>
 
+<script>
+	function insert_myMenu(name,type,price,idx,url){
+		var obj = new Object();
+		obj.name =name;
+		obj.type=type;
+		obj.price=price;
+		obj.idx=idx;
+		var data = JSON.stringify(obj);
+		$.ajax({
+			url:'${url}/menu/InsertMyMenu',
+			data:{
+				data:data
+			},
+			method:'post',
+			success:function(e){
+				
+				if(e=='login_check'){
+					alert('로그인후 이용해주세요');
+					location.href='${url}/login/loginPage?redirect_url='+url;
+				} else {
+					alert('My 메뉴에 추가완료');
+				}
+				
+			},error:function(){
+				console.log('ajax통신 실패');
+			}
+		});
+		
+	}
+</script>
+
 <script type="text/javascript">
 	$().ready(function(){
 		//로그인 상태 확인 

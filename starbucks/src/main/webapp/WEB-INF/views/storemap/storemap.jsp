@@ -65,6 +65,7 @@
 			navigator.geolocation.getCurrentPosition(function(position) {
 				localStorage.setItem('lat', position.coords.latitude);
 				localStorage.setItem('long', position.coords.longitude);
+				location.href="${url}/store/storeMap";
 			}, function(error) {
 				console.error(error);
 			}, {

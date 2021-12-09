@@ -443,7 +443,7 @@
 						</tfoot>
 					</table>
 				</div>
-
+				
 				<div class="card_wrap">
 					<div class="card_wrap_title">
 						<h4>결제할 카드 선택</h4>
@@ -480,7 +480,9 @@
 						</ul>
 					</div>
 				</div>
-					
+				
+				
+				
 			</div>
 
 		</div>

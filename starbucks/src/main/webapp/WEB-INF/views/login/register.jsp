@@ -29,6 +29,7 @@
 						$('#user_phone').attr('readonly',true);
 						$('.phonebtn').css({'display' : 'none'});
 						$('.phone_auth').css({'display' : 'block'});
+						alert('입력하신 번호로 인증번호를 전송했습니다.');
 					} else {
 						alert('이미 등록된 휴대폰 번호입니다.')
 					}
@@ -65,7 +66,7 @@
 				if(data =='success'){
 					//인증 성공
 					alert('인증성공');
-					$('phone_auth').css({'display' : 'none'});
+					$('.phone_auth').css({'display' : 'none'});
 					phonecheck =true;
 					
 				} else {

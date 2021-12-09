@@ -1,19 +1,27 @@
 package com.lkm.starbucks.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.ibatis.session.SqlSession;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.lkm.starbucks.command.command;
 import com.lkm.starbucks.command.menu.drink_product_viewcommand;
 import com.lkm.starbucks.command.menu.drinklistcommand;
 import com.lkm.starbucks.command.menu.food_listcommand;
 import com.lkm.starbucks.command.menu.food_product_viewcommand;
+import com.lkm.starbucks.dao.coffeedao;
+import com.lkm.starbucks.dao.drinkdao;
+import com.lkm.starbucks.dto.usersdto;
 
 @Controller
 public class menucontroller {
@@ -69,6 +77,51 @@ public class menucontroller {
 		
 		
 		return "product/food_product_view";
+	}
+	
+	@RequestMapping( value="menu/InsertMyMenu",method=RequestMethod.POST)
+	@ResponseBody
+	public String insertMyMenu(HttpServletRequest req,Model model) {
+		
+		usersdto udto = (usersdto) req.getSession().getAttribute("udto");
+		
+		if(udto !=null) {
+			
+			String jsonData = req.getParameter("data");
+
+			JSONObject obj = new JSONObject(jsonData);
+
+			int uidx = udto.getUIdx();
+			String name = obj.getString("name");
+			String type = obj.getString("type");
+			String price = obj.getString("price");
+			String idx =obj.getString("idx");
+			int count =1;
+			
+			
+			
+			Map<String,Object> param = new HashMap<String, Object>();
+			param.put("uidx", uidx);
+			param.put("name", name);
+			param.put("type", type);
+			param.put("price", price);
+			param.put("idx", idx);
+			param.put("count", count);
+			System.out.println(param);
+			coffeedao cdao = sqlsession.getMapper(coffeedao.class);
+			
+			int result =cdao.insert_menu(param);
+			
+			return "success";
+			
+		} else {
+			
+			return "login_check";
+		}
+		
+		
+		
+		
 	}
 	
 }

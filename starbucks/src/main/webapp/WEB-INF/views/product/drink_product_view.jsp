@@ -12,6 +12,17 @@
 			lensFadeIn: 100,
 			lensFadeOut: 100
 		});
+		
+		$('.myDrink a').on('click',function(){
+			var name ='${drink.getDName()}';
+			var type='DRINK';
+			var price ='${drink.getDPrice()}';
+			var idx ='${drink.getDIdx()}';
+			
+			insert_myMenu(name,type,price,idx,'menu/drink_list');
+			
+		});
+		
 	});
 </script>
 <div class="wrap">

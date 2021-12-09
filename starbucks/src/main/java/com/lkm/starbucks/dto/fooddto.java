@@ -7,12 +7,12 @@ import lombok.Setter;
 @Setter
 public class fooddto {
 
-	int fIdx,fKcal,fSaturate,fProtein,fSalt,fSugar,ftIdx;
+	int fIdx,fKcal,fSaturate,fProtein,fSalt,fSugar,ftIdx,fPrice;
 	String fName,fNotice,fImg,fLargeimg,fInfo,fSize;
 	
 	public fooddto() {}
 
-	public fooddto(int fIdx, int fKcal, int fSaturate, int fProtein, int fSalt, int fSugar, int ftIdx, String fName,
+	public fooddto(int fIdx, int fKcal, int fSaturate, int fProtein, int fSalt, int fSugar, int ftIdx,int fPrice, String fName,
 			String fNotice, String fImg, String fLargeimg, String fInfo, String fSize) {
 		super();
 		this.fIdx = fIdx;
@@ -28,6 +28,7 @@ public class fooddto {
 		this.fLargeimg = fLargeimg;
 		this.fInfo = fInfo;
 		this.fSize = fSize;
+		this.fPrice=fPrice;
 	}
 	
 	
