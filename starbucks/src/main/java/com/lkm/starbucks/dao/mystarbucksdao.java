@@ -64,4 +64,14 @@ public interface mystarbucksdao {
 	
 	public ArrayList<mycartdto> getmycart(Map<String,Object> param);
 	
+	public int getCardMoney(int uclidx);
+	
+	public int card_pinNumcheck(Map<String,Object> params);	
+	public int first_buy_insert(order_listdto odto);
+	public int buy_insert(order_listdto odto);
+	
+	public void delete_cart(int mcidx);
+	
+	public int update_cardMoney(Map<String,Object> cardMap);
+	public void update_card_deposit(Map<String,Object> cardMap);
 }

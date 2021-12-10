@@ -107,7 +107,6 @@ public class menucontroller {
 			param.put("price", price);
 			param.put("idx", idx);
 			param.put("count", count);
-			System.out.println(param);
 			coffeedao cdao = sqlsession.getMapper(coffeedao.class);
 			
 			int result =cdao.insert_menu(param);

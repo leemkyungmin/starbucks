@@ -216,6 +216,10 @@ table tbody td input[type="text"] {
 
 #MyModal {
 	color: #222 !important;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
 }
 
 #MyModal .modal-dialog {
@@ -231,6 +235,7 @@ table tbody td input[type="text"] {
 	width: 50%;
 	float: right;
 	position: relative;
+	opacity: 0;
 }
 
 #MyModal table {
@@ -260,37 +265,78 @@ table tbody td input[type="text"] {
 	font-size: 12px;
 	background: #006633;
 	font-weight: bold;
-	height:24px;
-	line-height:24px;
+	height: 24px;
+	line-height: 24px;
 	text-align: center;
 	padding: 5px;
 	color: #fff;
 }
 
-.card_info dl dd dl dt{
-	float:left;
+.card_info dl dd dl dt {
+	float: left;
 	width: 50%;
 	display: inline-block;
 	text-align: center;
 }
-.card_info dl dd dl dd{
+
+.card_info dl dd dl dd {
 	width: 50%;
 	display: inline-block;
 	text-align: center;
 }
-.card_info_inner dl{ 
+
+.card_info_inner dl {
 	margin-top: 30px;
 }
-.card_pin_form{
+
+.card_pin_form {
 	padding-left: 77px;
 }
-.card_pin_form a:hover{
+
+.select_branch_wrap {
+	width: 50%;
+	float: right;
+	padding-left: 30px;
+	position: relative;
+}
+
+#searchBtn {
+	font-size: 14px;
+	background: #006633;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	padding: 5px 10px;
+	color: #fff;
+}
+
+.card_pin_form a:hover {
 	font-size: 12px;
 	background: #006633;
 	font-weight: bold;
-	height:24px;
-	line-height:24px;
+	height: 24px;
+	line-height: 24px;
 	text-align: center;
 	padding: 5px;
 	color: #fff;
+}
+
+#branch_list {
+	margin-top: 15px;
+	max-height: 730px;
+
+}
+
+#branch_list li:first-child {
+	border-top: 1px solid #222;
+}
+
+#branch_list li {
+	border-bottom: 1px solid #222;
+}
+
+#branch_list li dl {
+	margin-top: 1rem !important;
+	cursor: pointer;
 }

@@ -4,117 +4,280 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.lkm.starbucks.dao.mystarbucksdao">
-	
-	<!-- my/index  start-->
-	<select id="getCardList" resultType="com.lkm.starbucks.dto.user_card_listdto">
-		SELECT ucl.*,cl.CLIMG 
+
+	<!-- my/index start -->
+	<select id="getCardList"
+		resultType="com.lkm.starbucks.dto.user_card_listdto">
+		SELECT ucl.*,cl.CLIMG
 		FROM USER_CARD_LIST ucl,CARD_LIST cl
-		WHERE ucl.UIDX = #{param1} AND ucl.CLIDX = cl.CLIDX
-		ORDER BY uclRepcard DESC
-		
+		WHERE ucl.UIDX = #{param1} AND
+		ucl.CLIDX = cl.CLIDX
+		ORDER BY uclRepcard
+		DESC
+
 	</select>
-	
-	<select id="getCardinfo" resultType="com.lkm.starbucks.dto.card_listdto">
+
+	<select id="getCardinfo"
+		resultType="com.lkm.starbucks.dto.card_listdto">
 		SELECT *
 		FROM CARD_LIST
 		WHERE CLIDX = #{param1}
 	</select>
-	
-	<!-- my/index  end-->
-	
-	
-	<!--  my/reward/my_reward_history start-->
-	
-	<select id="reward_history" parameterType="Map" resultType="com.lkm.starbucks.dto.myrewarddto">
+
+	<!-- my/index end -->
+
+
+	<!-- my/reward/my_reward_history start -->
+
+	<select id="reward_history" parameterType="Map"
+		resultType="com.lkm.starbucks.dto.myrewarddto">
 		SELECT mr.*,bi.BNAME
-		FROM MYREWARD mr,ORDER_LIST ol,BRANCH_INFO bi
-		WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND (mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND ol.bidx = bi.bidx
-        GROUP BY mr.ONUM,mr.MRIDX,mr.MRMONEY,mr.MRSTAR,mr.MRDATE,bi.BNAME
-        ORDER BY mr.MRDATE DESC
+		FROM MYREWARD mr,ORDER_LIST
+		ol,BRANCH_INFO bi
+		WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND
+		(mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND ol.bidx = bi.bidx
+		GROUP BY mr.ONUM,mr.MRIDX,mr.MRMONEY,mr.MRSTAR,mr.MRDATE,bi.BNAME
+		ORDER BY mr.MRDATE DESC
 	</select>
-	
+
 	<!-- 1_month_reward -->
-	<select id="month_reward" parameterType="Map" resultType="Integer">
+	<select id="month_reward" parameterType="Map"
+		resultType="Integer">
 		SELECT NVL(sum(a.mrstar),0)
-		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+		FROM (SELECT mr.mrstar FROM MYREWARD
+		mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND (mr.MRDATE BETWEEN #{begin_day} AND #{today}) AND mr.mrstar>0]]>
-        group by mr.mridx,mr.onum,mr.mrstar) a
+		group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
 	<!-- all_reward -->
-	<select id="total_reward" parameterType="Map" resultType="Integer">
+	<select id="total_reward" parameterType="Map"
+		resultType="Integer">
 		SELECT NVL(sum(a.mrstar),0)
-		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+		FROM (SELECT mr.mrstar FROM MYREWARD
+		mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx} AND mr.mrstar>0]]>
-        group by mr.mridx,mr.onum,mr.mrstar) a
+		group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
 	<!-- use_reward -->
-	<select id="use_reward" parameterType="Map" resultType="Integer"> 
+	<select id="use_reward" parameterType="Map" resultType="Integer">
 		SELECT NVL(sum(a.mrstar)*-1,0)
-		FROM (SELECT mr.mrstar FROM MYREWARD mr,ORDER_LIST ol
+		FROM (SELECT mr.mrstar FROM MYREWARD
+		mr,ORDER_LIST ol
 			 <![CDATA[WHERE mr.ONUM = ol.ONUM AND ol.UIDX=#{uidx}  AND mr.mrstar<0]]>
-        group by mr.mridx,mr.onum,mr.mrstar) a
+		group by mr.mridx,mr.onum,mr.mrstar) a
 	</select>
-	
+
 	<!-- model for order_list -->
-	
-	<select id="get_order_info" parameterType="Map" resultType="com.lkm.starbucks.dto.order_listdto">
+
+	<select id="get_order_info" parameterType="Map"
+		resultType="com.lkm.starbucks.dto.order_listdto">
 		SELECT o.*,bi.BNAME
 		FROM ORDER_LIST o, BRANCH_INFO bi
-		WHERE o.ONUM=#{oNum} AND o.BIDX = bi.BIDX
+		WHERE
+		o.ONUM=#{oNum} AND o.BIDX = bi.BIDX
 	</select>
-	
-	<!--  my/reward/my_reward_history end-->
-	
-	<!-- my/card/new_card start  -->
-	<select id="getcardlist" resultType="com.lkm.starbucks.dto.card_listdto">
-		SELECT * 
+
+	<!-- my/reward/my_reward_history end -->
+
+	<!-- my/card/new_card start -->
+	<select id="getcardlist"
+		resultType="com.lkm.starbucks.dto.card_listdto">
+		SELECT *
 		FROM CARD_LIST
 	</select>
-	
-	<select id="getcardinfo" resultType="com.lkm.starbucks.dto.card_listdto">
+
+	<select id="getcardinfo"
+		resultType="com.lkm.starbucks.dto.card_listdto">
 		SELECT *
 		FROM CARD_LIST
 		WHERE CLIDX=#{param1}
 	</select>
-	
+
 	<update id="update_per_card">
 		UPDATE TABLE USER_CARD_LIST
 		SET UCLREPCARD = 0
-		WHERE UIDX = #{param1}
+		WHERE
+		UIDX = #{param1}
 	</update>
-	
+
 	<insert id="insert_card" parameterType="Map">
-		INSERT INTO USER_CARD_LIST(
-			UCLIDX,
-			UCLNAME,
-			UCLCARDNUM,
-			UCLPINNUM,
-			UCLREPCARD,
-			UCLMONEY,
-			UIDX,
-			CLIDX
+		INSERT INTO
+		USER_CARD_LIST(
+		UCLIDX,
+		UCLNAME,
+		UCLCARDNUM,
+		UCLPINNUM,
+		UCLREPCARD,
+		UCLMONEY,
+		UIDX,
+		CLIDX
 		) VALUES(
-			USER_CARD_LIST_SEQ.NEXTVAL,
-			#{cardname},
-			#{cardnum},
-			#{pin_num},
-			#{percard},
-			0,
-			#{uidx},
-			#{clidx}
+		USER_CARD_LIST_SEQ.NEXTVAL,
+		#{cardname},
+		#{cardnum},
+		#{pin_num},
+		#{percard},
+		0,
+		#{uidx},
+		#{clidx}
 		)
 	</insert>
-	
-	<!-- my/card/new_card end  -->
-	
-	<!--  my/card/my_card_list payment -->
+
+	<!-- my/card/new_card end -->
+
+	<!-- my/card/my_card_list payment -->
 	<update id="update_my_card_deposit" parameterType="Map">
-		UPDATE USER_CARD_LIST
-		SET	UCLMONEY =UCLMONEY+#{amount}
+		UPDATE
+		USER_CARD_LIST
+		SET UCLMONEY =UCLMONEY+#{amount}
 		WHERE UCLIDX = #{uclidx}
 	</update>
 	<insert id="insert_my_card_deposit" parameterType="Map">
-		INSERT INTO user_card_deposit(
+		INSERT INTO
+		user_card_deposit(
+		UCDIDX,
+		UCDDATE,
+		UCDTYPE,
+		UCDDEPOSIT,
+		UIDX,
+		UCLIDX
+		)
+		VALUES(
+		USER_CARD_DEPOSIT_SEQ.NEXTVAL,
+		SYSDATE,
+		#{type},
+		#{amount},
+		#{uidx},
+		#{uclidx}
+		)
+	</insert>
+
+	<select id="user_card_info"
+		resultType="com.lkm.starbucks.dto.user_card_listdto">
+		SELECT *
+		FROM USER_CARD_LIST
+		WHERE UCLIDX=#{param1}
+	</select>
+
+	<!-- 카드 내역 리스트 -->
+
+	<select id="getDepositList" parameterType="Map"
+		resultType="com.lkm.starbucks.dto.user_card_depositdto">
+		SELECT a.*
+		FROM (SELECT ROWNUM rn,ucd.* FROM
+		USER_CARD_DEPOSIT ucd WHERE UCLIDX=#{uclidx} ORDER BY UCDIDX DESC) a
+		WHERE rn BETWEEN #{beginRecord} and #{endRecord}
+	</select>
+
+	<select id="deposit_totalcount" parameterType="Map"
+		resultType="Integer">
+		SELECT COUNT(*)
+		FROM USER_CARD_DEPOSIT
+		WHERE UCLIDX=#{uclidx}
+	</select>
+
+
+	<!-- 1. 카드 내역 삭제 -->
+	<delete id="drop_card_deposit" parameterType="Map">
+		DELETE FROM
+		USER_CARD_DEPOSIT
+		WHERE UCLIDX =#{uclidx} AND UIDX=#{uidx}
+	</delete>
+	<!-- 2.카드 삭제 -->
+	<delete id="drop_card" parameterType="Map">
+		DELETE FROM USER_CARD_LIST
+		WHERE UCLIDX =#{uclidx} AND UCLPINNUM=#{pinNum} AND UIDX=#{uidx}
+	</delete>
+
+	<!-- myMenu -->
+	<select id="getmycart"
+		resultType="com.lkm.starbucks.dto.mycartdto">
+		SELECT *
+		FROM MYCART
+		WHERE UIDX=#{uidx} AND MCTYPE=#{type}
+	</select>
+
+	<select id="getCardMoney" resultType="Integer">
+		SELECT UCLMONEY
+		FROM
+		USER_CARD_LIST
+		WHERE UCLIDX=#{param1}
+	</select>
+	
+	
+	
+	<insert id="first_buy_insert"
+		parameterType="com.lkm.starbucks.dto.order_listdto">
+		<selectKey resultType="com.lkm.starbucks.dto.order_listdto" keyProperty="oNum"
+			order="BEFORE">
+			SELECT NVL(MAX(ONUM)+1,(substr(#{oDate},0,4) || substr(#{oDate},6,2) || substr(#{oDate},9,2)||#{bIdx}||'0001')) as oNum
+			FROM ORDER_LIST
+			WHERE TO_CHAR(ODATE,'YYYY-MM-DD') =#{oDate} AND BIDX=#{bIdx}
+		</selectKey>
+		
+		INSERT INTO ORDER_LIST(
+			UIDX,
+			ONUM,
+			ONAME,
+			OCOUNT,
+			OPRICE,
+			ODATE,
+			OSTATUS,
+			BIDX
+		) VALUES(
+			#{uIdx},
+			#{oNum},
+			#{oName},
+			#{oCount},
+			#{oPrice},
+			#{oDate},
+			1,
+			#{bIdx}
+		)
+		
+		
+
+	</insert>
+	<insert id="buy_insert"
+		parameterType="com.lkm.starbucks.dto.order_listdto">
+				
+		INSERT INTO ORDER_LIST(
+			UIDX,
+			ONUM,
+			ONAME,
+			OCOUNT,
+			OPRICE,
+			ODATE,
+			OSTATUS,
+			BIDX
+		) VALUES(
+			#{uIdx},
+			#{oNum},
+			#{oName},
+			#{oCount},
+			#{oPrice},
+			#{oDate},
+			1,
+			#{bIdx}
+		)
+		
+		
+
+	</insert>
+	
+	
+	<delete id="delete_cart" parameterType="Integer">
+		DELETE FROM MYCART
+		WHERE MCIDX=#{param1}
+	</delete>
+	
+	<update id="update_cardMoney" parameterType="Map">
+		UPDATE USER_CARD_LIST
+		SET UCLMONEY =(UCLMONEY-#{totalPrice})
+		WHERE UCLIDX=#{uclIdx} 
+	</update>
+	<insert id="update_card_deposit" parameterType="Map">
+		INSERT INTO USER_CARD_DEPOSIT(
 			UCDIDX,
 			UCDDATE,
 			UCDTYPE,
@@ -124,50 +287,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		) VALUES(
 			USER_CARD_DEPOSIT_SEQ.NEXTVAL,
 			SYSDATE,
-			#{type},
-			#{amount},
-			#{uidx},
-			#{uclidx}
+			'사용',
+			#{totalPrice}*-1,
+			#{uIdx},
+			#{uclIdx}
+			
 		)
 	</insert>
 	
-	<select id="user_card_info" resultType="com.lkm.starbucks.dto.user_card_listdto">
-		SELECT * 
-		FROM USER_CARD_LIST
-		WHERE UCLIDX=#{param1}
-	</select>
-	
-	<!-- 카드 내역 리스트 -->
-	
-	<select id="getDepositList" parameterType="Map" resultType="com.lkm.starbucks.dto.user_card_depositdto">
-		SELECT a.*
-		FROM (SELECT ROWNUM rn,ucd.* FROM USER_CARD_DEPOSIT ucd WHERE UCLIDX=#{uclidx} ORDER BY UCDIDX DESC) a
-		WHERE rn BETWEEN #{beginRecord} and #{endRecord}
-	</select>
-	
-	<select id="deposit_totalcount" parameterType="Map" resultType="Integer">
+	<select id="card_pinNumcheck" parameterType="Map" resultType="Integer">
 		SELECT COUNT(*)
-		FROM USER_CARD_DEPOSIT
-		WHERE UCLIDX=#{uclidx}
+		FROM USER_CARD_LIST
+		WHERE UCLIDX=#{uclIdx} AND UCLPINNUM =#{pinNum}
 	</select>
 	
-	
-	<!-- 1. 카드 내역 삭제 -->
-	<delete id="drop_card_deposit" parameterType="Map">
-		DELETE FROM USER_CARD_DEPOSIT
-		WHERE UCLIDX =#{uclidx} AND UIDX=#{uidx}
-	</delete>
-	<!-- 2.카드 삭제 --> 
-	<delete id="drop_card" parameterType="Map">
-		DELETE FROM USER_CARD_LIST
-		WHERE UCLIDX =#{uclidx} AND UCLPINNUM=#{pinNum} AND UIDX=#{uidx}
-	</delete>
-	
-	<!-- myMenu -->
-	<select id="getmycart" resultType="com.lkm.starbucks.dto.mycartdto">
-		SELECT *
-		FROM MYCART
-		WHERE UIDX=#{uidx} AND MCTYPE=#{type}
-	</select>
-		
+
 </mapper>
