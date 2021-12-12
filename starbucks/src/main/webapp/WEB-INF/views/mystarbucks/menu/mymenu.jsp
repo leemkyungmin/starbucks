@@ -373,6 +373,7 @@
 								obj.bidx =$('#branch_idx').val();
 								obj.tot =tot;
 								obj.pinNum =pinNum;
+								obj.status ='상품준비중',
 								obj.orderlist =orderList;  
 								
 								var data = JSON.stringify(obj);

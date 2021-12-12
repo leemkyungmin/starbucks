@@ -1,0 +1,275 @@
+@charset "UTF-8";
+
+.wrap {
+	position: relative;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap header {
+	background: #231a11;
+	height: 178px;
+	position: relative;
+	width: 100%;
+}
+
+.wrap header .header_title_content {
+	background: url(../images/commom/ms_sub_ttl_bg.jpg);
+	height: 178px;
+	left: 50%;
+	margin-left: -1000px;
+	position: absolute;
+	top: 0;
+	width: 2000px;
+}
+
+.wrap header .header_title_content .header_title_inner {
+	height: 74px;
+	margin: 0 auto;
+	padding-top: 104px;
+	position: relative;
+	width: 60%;
+}
+
+.wrap header .header_title_content .header_title_inner h4 {
+	font: bold 36px Avenir, Arial, georgia;
+	color: #fefefe;
+	position: relative;
+}
+
+.wrap_content {
+	position: relative;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+.wrap_content .my_orderlist_wrap {
+	float: left;
+	width: 76%;
+	margin-bottom: 90px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner {
+	width: 100%;
+	position: relative;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller {
+	background: #f4f4f2;
+	border-radius: 3px;
+	min-height: 60px;
+	margin-top: 30px;
+	width: 100%;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_radio_picker
+	{
+	background: url(../images/commom/reward/my_card_pick_bg.gif) 0 0;
+	float: left;
+	height: 28px;
+	margin: 16px 0 0 30px;
+	width: 298px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_radio_picker dt
+	{
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	width: 48px;
+	float: left;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_radio_picker dd
+	{
+	color: #444;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	width: 230px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner 
+	.date_controller .date_radio_picker dd input {
+	height: 13px;
+	margin: 8px 0 0 13px;
+	width: 13px;
+	float: left;
+}
+.wrap_content .my_orderlist_wrap .my_orderlist_inner 
+	.date_controller .date_radio_picker dd label {
+	margin: 0 0 0 5px;
+    float: left;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner {
+	margin: 0 0 0 5px;
+	float: left;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker
+	{
+	float: right;
+	height: 28px;
+	margin: 16px 30px 0 0;
+	width: 394px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dt
+	{
+	color: #222;
+	font-size: 14px;
+	font-weight: bold;
+	height: 30px;
+	line-height: 30px;
+	width: 48px;
+	float: left;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd
+	{
+	color: #444;
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+	width: 338px;
+	float: left;
+	font-size: 12px;
+	line-height: 30px;
+	width: 338px;
+	float: left;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .pick_date_each
+	{
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	float: left;
+	height: 26px;
+	width: 133px;
+	position: relative;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .pick_date_each .pick_date_each_left
+	{
+	border-right: 1px solid #ddd;
+	float: left;
+	height: 26px;
+	width: 102px;
+	width: 133px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .pick_date_each .pick_date_each_right
+	{
+	float: left;
+	height: 26px;
+	width: 30px;
+	position: absolute;
+	right: 0px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .pick_date_each .pick_date_each_right label
+	{
+	background: url(../images/commom/reward/icon_calendar.gif);
+	cursor: pointer;
+	float: left;
+	height: 14px;
+	margin: 6px 0 0 8px;
+	overflow: hidden;
+	text-indent: -20000px;
+	width: 14px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd input
+	{
+	border: none;
+	height: 26px;
+	line-height: 28px;
+	text-indent: 10px;
+	width: 102px;
+	padding-top: 4px;
+	font-size: 16px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .pick_slider
+	{
+	float: left;
+	height: 28px;
+	width: 16px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .btn_pick_date
+	{
+	float: right;
+	height: 28px;
+	width: 40px;
+}
+
+.wrap_content .my_orderlist_wrap .my_orderlist_inner .date_controller .date_time_picker dd .btn_pick_date a
+	{
+	background: #777;
+	border-radius: 3px;
+	color: #fff;
+	display: block;
+	line-height: 28px;
+	text-align: center;
+	width: 100%;
+}
+
+table {
+	text-align: center;
+}
+
+table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:before,
+	table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_asc_disabled:before,
+	table.dataTable>thead .sorting_desc_disabled:before {
+	right: 1em;
+	content: "" !important;
+}
+
+table.dataTable>thead .sorting:before, table.dataTable>thead .sorting_asc:before,
+	table.dataTable>thead .sorting_desc:before, table.dataTable>thead .sorting_asc_disabled:before,
+	table.dataTable>thead .sorting_asc:after {
+	right: 1em;
+	content: "" !important;
+}
+
+table td {
+	vertical-align: middle !important;
+}
+
+.pagecontroll {
+	height: 27px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 100%;
+}
+
+.pagecontroll ul{
+	text-align: center;
+}
+
+.pagecontroll ul li {
+	display: inline-block;
+	margin: 0 10px;
+	vertical-align: middle;
+}
+
+.pagecontroll ul li a {
+	color: #222;
+}
+.pagecontroll ul li.active a {
+	font-weight: bold;
+}
+.pagecontroll ul li a:hover {
+	text-decoration: none;
+}
+
+.dataTables_paginate{
+	display:none;
+}

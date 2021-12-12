@@ -257,7 +257,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{oCount},
 			#{oPrice},
 			#{oDate},
-			1,
+			'',
 			#{bIdx}
 		)
 		
@@ -301,5 +301,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHERE UCLIDX=#{uclIdx} AND UCLPINNUM =#{pinNum}
 	</select>
 	
+	<select id="getOrderList" parameterType="Map" resultType="com.lkm.starbucks.dto.order_listdto">
+		
+		SELECT a.*
+		FROM (SELECT ROWNUM rn,ol.*,bi.BNAME
+			  FROM ORDER_LIST ol,BRANCH_INFO bi
+			 <![CDATA[ WHERE ol.UIDX=#{uidx} AND ol.bidx=bi.bidx AND ol.ODATE BETWEEN #{pickdate01} AND #{pickdate02}]]>
+        	  ORDER BY ol.ODATE DESC, ol.ONUM desc 
+    		 )a
+		<![CDATA[WHERE rn BETWEEN #{beginRecord} AND #{endRecord}]]>
+		
+	</select>
+	
+	<select id="myordercount" parameterType="Map" resultType="Integer">
+		SELECT COUNT(*) 
+		FROM ORDER_LIST
+		<![CDATA[WHERE UIDX=#{uidx} AND ODATE BETWEEN #{pickdate02} AND #{pickdate01}]]>
+	</select>
 
 </mapper>

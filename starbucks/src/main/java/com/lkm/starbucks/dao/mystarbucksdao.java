@@ -74,4 +74,11 @@ public interface mystarbucksdao {
 	
 	public int update_cardMoney(Map<String,Object> cardMap);
 	public void update_card_deposit(Map<String,Object> cardMap);
+	
+	/*
+	 * My주문내역
+	 * 
+	 */
+	public ArrayList<order_listdto> getOrderList(Map<String, Object> param);
+	public int myordercount (Map<String,Object> param);
 }
